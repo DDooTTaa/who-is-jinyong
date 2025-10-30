@@ -31,21 +31,21 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'jinyong@example.com',
-      link: 'mailto:jinyong@example.com',
+      value: 'wlswls8783@gmail.com',
+      link: 'mailto:wlswls8783@gmail.com',
       color: 'text-blue-400'
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+82 10-1234-5678',
-      link: 'tel:+821012345678',
+      value: '+82 10-8981-1131',
+      link: 'tel:+821089811131',
       color: 'text-green-400'
     },
     {
       icon: MapPin,
       title: 'Location',
-      value: 'Seoul, South Korea',
+      value: '경기도, 성남시 분당구',
       link: '#',
       color: 'text-red-400'
     }

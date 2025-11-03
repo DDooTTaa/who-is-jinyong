@@ -39,24 +39,24 @@ const About = () => {
       description: '코딩에 대한 진정한 열정으로 매일 새로운 것을 배우고 성장합니다.',
       color: 'text-red-400',
     },
-    {
-      icon: Lightbulb,
-      title: '창의성',
-      description: '독창적인 아이디어로 문제를 해결하고 혁신적인 솔루션을 만듭니다.',
-      color: 'text-yellow-400',
-    },
-    {
-      icon: Target,
-      title: '목표지향',
-      description: '명확한 목표를 설정하고 체계적으로 접근하여 성과를 달성합니다.',
-      color: 'text-green-400',
-    },
-    {
-      icon: Users,
-      title: '협업',
-      description: '팀워크를 중시하며 함께 성장할 수 있는 환경을 만들어갑니다.',
-      color: 'text-blue-400',
-    },
+    // {
+    //   icon: Lightbulb,
+    //   title: '창의성',
+    //   description: '독창적인 아이디어로 문제를 해결하고 혁신적인 솔루션을 만듭니다.',
+    //   color: 'text-yellow-400',
+    // },
+    // {
+    //   icon: Target,
+    //   title: '목표지향',
+    //   description: '명확한 목표를 설정하고 체계적으로 접근하여 성과를 달성합니다.',
+    //   color: 'text-green-400',
+    // },
+    // {
+    //   icon: Users,
+    //   title: '협업',
+    //   description: '팀워크를 중시하며 함께 성장할 수 있는 환경을 만들어갑니다.',
+    //   color: 'text-blue-400',
+    // },
   ]
 
   return (

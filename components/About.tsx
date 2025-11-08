@@ -97,7 +97,7 @@ const About = () => {
             <div className="glass-effect p-8 rounded-2xl">
               <h3 className="text-2xl font-bold mb-4 text-cosmic-300">나의 이야기</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-               매일 새로운 기술을 배우고 
+                개발의 세계에 입문한 지 얼마 되지 않았지만, 매일 새로운 기술을 배우고 
                 프로젝트를 통해 성장해나가고 있습니다. 사용자 중심의 사고와 
                 아름다운 디자인에 대한 열정을 가지고 있습니다.
               </p>

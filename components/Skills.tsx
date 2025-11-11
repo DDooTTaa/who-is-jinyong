@@ -198,10 +198,10 @@ const Skills = () => {
           >
             <h3 className="text-2xl font-bold mb-4 text-glow">기술 경험</h3>
             <p className="text-gray-300 leading-relaxed">
-              <span className="text-cosmic-300 font-semibold">React, Vue, TypeScript</span>를 활용한 웹 서비스 개발과
-              <span className="text-mystic-300 font-semibold">Flutter</span>를 이용한 앱 개발 경험이 있습니다.
-              <span className="text-cosmic-300 font-semibold">Redux-saga, VueX</span>를 통한 전역 상태 관리와
-              <span className="text-mystic-300 font-semibold">GitHub Actions, AWS CloudFront</span>를 활용한 CI/CD 구현 경험을 보유하고 있습니다.
+              <span className="text-cosmic-300 font-semibold">React, Vue, TypeScript</span>를 활용한 웹 서비스 개발과 
+              <span className="text-mystic-300 font-semibold"> Flutter</span>를 이용한 앱 개발 경험이 있습니다.
+              <span className="text-cosmic-300 font-semibold"> Redux-saga, VueX</span>를 통한 전역 상태 관리와
+              <span className="text-mystic-300 font-semibold"> GitHub Actions, AWS CloudFront</span>를 활용한 CI/CD 구현 경험을 보유하고 있습니다.
             </p>
           </motion.div>
         </motion.div>

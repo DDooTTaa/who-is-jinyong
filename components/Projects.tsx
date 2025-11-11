@@ -441,11 +441,11 @@ const Projects = () => {
             variants={itemVariants}
             className="glass-effect p-8 rounded-2xl max-w-4xl mx-auto"
           >
-            <h3 className="text-2xl font-bold mb-4 text-glow">프로젝트 경험</h3>
+            <h3 className="text-2xl font-bold mb-4 text-glow">또 다른 경험</h3>
             <p className="text-gray-300 leading-relaxed">
-              메뉴잇에서 <span className="text-cosmic-300 font-semibold">25개 이상의 Feature 개발과 500개 이상의 BugFix</span>를 수행했으며,
-              패스트뷰에서는 <span className="text-mystic-300 font-semibold">운영팀의 업무 효율을 50% 이상 향상</span>시켰습니다.
-              컴포넌트 공통화와 자동화 서비스를 통해 개발 효율성과 사용자 경험을 지속적으로 개선해왔습니다.
+              뇽뇽 <span className="text-cosmic-300 font-semibold">따따</span>라라
+              <span className="text-mystic-300 font-semibold">갸갸</span>
+              나나나
             </p>
           </motion.div>
         </motion.div>

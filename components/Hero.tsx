@@ -46,14 +46,15 @@ const Hero = () => {
           >
             <div className="relative">
               <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-purple-500 to-blue-500 p-1">
-                <div className="w-full h-full rounded-full bg-black flex items-center justify-center overflow-hidden">
+                <div className="w-full h-full rounded-full bg-black overflow-hidden relative">
                   <Image
                     src="/공진용.png"
                     alt="공진용"
-                    width={128}
-                    height={128}
-                    className="w-full h-full object-cover rounded-full"
+                    fill
+                    className="object-cover rounded-full scale-125"
+                    style={{ objectPosition: 'center center' }}
                     priority
+                    sizes="128px"
                   />
                 </div>
               </div>

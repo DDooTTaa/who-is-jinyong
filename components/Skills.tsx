@@ -26,35 +26,38 @@ const Skills = () => {
       icon: Code2,
       color: 'from-blue-400 to-cyan-400',
       skills: [
-        { name: 'React', level: 85, icon: React },
-        { name: 'Next.js', level: 80, icon: Globe },
-        { name: 'TypeScript', level: 75, icon: TypeScript },
-        { name: 'Tailwind CSS', level: 90, icon: Palette },
-        { name: 'Framer Motion', level: 70, icon: Zap },
+        { name: 'React', level: 90, icon: React },
+        { name: 'Vue.js', level: 85, icon: Code2 },
+        { name: 'TypeScript', level: 85, icon: TypeScript },
+        { name: 'JavaScript', level: 90, icon: Code2 },
+        { name: 'Flutter', level: 70, icon: Smartphone },
       ]
     },
     {
-      title: 'Backend',
-      icon: Database,
+      title: 'State & Style',
+      icon: Palette,
       color: 'from-green-400 to-emerald-400',
       skills: [
-        { name: 'Node.js', level: 75, icon: Node },
-        { name: 'Express', level: 70, icon: Code2 },
-        { name: 'MongoDB', level: 65, icon: Database },
-        { name: 'PostgreSQL', level: 60, icon: Database },
-        { name: 'REST API', level: 80, icon: Globe },
+        { name: 'Redux-saga', level: 85, icon: Code2 },
+        { name: 'VueX', level: 80, icon: Code2 },
+        { name: 'Redux-Thunk', level: 80, icon: Code2 },
+        { name: 'Styled-Component', level: 85, icon: Palette },
+        { name: 'Tailwind CSS', level: 90, icon: Palette },
+        { name: 'SCSS', level: 85, icon: Palette },
       ]
     },
     {
-      title: 'Tools & Others',
+      title: 'Tools & DevOps',
       icon: Zap,
       color: 'from-purple-400 to-pink-400',
       skills: [
-        { name: 'Git', level: 85, icon: Git },
-        { name: 'Docker', level: 60, icon: Code2 },
-        { name: 'Vercel', level: 90, icon: Globe },
-        { name: 'Figma', level: 70, icon: Palette },
-        { name: 'Mobile Dev', level: 65, icon: Smartphone },
+        { name: 'Git', level: 90, icon: Git },
+        { name: 'GitHub Actions', level: 80, icon: Git },
+        { name: 'AWS CloudFront', level: 75, icon: Globe },
+        { name: 'Jira', level: 85, icon: Code2 },
+        { name: 'Notion', level: 90, icon: Code2 },
+        { name: 'Amplitude', level: 80, icon: Database },
+        { name: 'GTM', level: 75, icon: Database },
       ]
     }
   ]
@@ -105,7 +108,7 @@ const Skills = () => {
             variants={itemVariants}
             className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            지속적인 학습을 통해 쌓아온 기술 스택과 경험을 소개합니다.
+            웹/앱 서비스 개발과 운영 경험을 바탕으로 쌓아온 기술 스택을 소개합니다.
           </motion.p>
         </motion.div>
 
@@ -175,12 +178,12 @@ const Skills = () => {
             variants={itemVariants}
             className="glass-effect p-8 rounded-2xl max-w-4xl mx-auto"
           >
-            <h3 className="text-2xl font-bold mb-4 text-glow">학습 철학</h3>
+            <h3 className="text-2xl font-bold mb-4 text-glow">기술 경험</h3>
             <p className="text-gray-300 leading-relaxed">
-              기술은 빠르게 변화하지만, <span className="text-cosmic-300 font-semibold">근본적인 원리를 이해</span>하고 
-              <span className="text-mystic-300 font-semibold">실제 프로젝트에 적용</span>하는 것이 중요하다고 생각합니다. 
-              새로운 기술을 배울 때는 항상 '왜'와 '어떻게'를 함께 고민하며, 
-              사용자 경험을 최우선으로 하는 개발을 지향합니다.
+              <span className="text-cosmic-300 font-semibold">React, Vue, TypeScript</span>를 활용한 웹 서비스 개발과 
+              <span className="text-mystic-300 font-semibold">Flutter</span>를 이용한 앱 개발 경험이 있습니다. 
+              <span className="text-cosmic-300 font-semibold">Redux-saga, VueX</span>를 통한 전역 상태 관리와 
+              <span className="text-mystic-300 font-semibold">GitHub Actions, AWS CloudFront</span>를 활용한 CI/CD 구현 경험을 보유하고 있습니다.
             </p>
           </motion.div>
         </motion.div>

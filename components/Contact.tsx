@@ -38,16 +38,16 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone',
-      value: '+82 10-8981-1131',
+      value: '010-8981-1131',
       link: 'tel:+821089811131',
       color: 'text-green-400'
     },
     {
-      icon: MapPin,
-      title: 'Location',
-      value: '경기도, 성남시 분당구',
-      link: '#',
-      color: 'text-red-400'
+      icon: MessageCircle,
+      title: 'Blog',
+      value: 'https://ddoottaa.tistory.com/',
+      link: 'https://ddoottaa.tistory.com/',
+      color: 'text-purple-400'
     }
   ]
 
@@ -55,20 +55,14 @@ const Contact = () => {
     {
       icon: Github,
       name: 'GitHub',
-      url: 'https://github.com/jinyong',
+      url: 'https://github.com/DDooTTaa',
       color: 'hover:text-gray-400'
     },
     {
-      icon: Linkedin,
-      name: 'LinkedIn',
-      url: 'https://linkedin.com/in/jinyong',
-      color: 'hover:text-blue-400'
-    },
-    {
-      icon: Twitter,
-      name: 'Twitter',
-      url: 'https://twitter.com/jinyong',
-      color: 'hover:text-blue-400'
+      icon: MessageCircle,
+      name: 'Blog',
+      url: 'https://ddoottaa.tistory.com/',
+      color: 'hover:text-purple-400'
     }
   ]
 

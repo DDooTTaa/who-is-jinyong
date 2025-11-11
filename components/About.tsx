@@ -35,28 +35,22 @@ const About = () => {
   const values = [
     {
       icon: Heart,
-      title: '열정',
-      description: '코딩에 대한 진정한 열정으로 매일 새로운 것을 배우고 성장합니다.',
+      title: '기록의 습관',
+      description: '협업 과정에 필요없는 리소스를 줄이기 위해 메모하는 습관을 항상 노력합니다.',
       color: 'text-red-400',
     },
-    // {
-    //   icon: Lightbulb,
-    //   title: '창의성',
-    //   description: '독창적인 아이디어로 문제를 해결하고 혁신적인 솔루션을 만듭니다.',
-    //   color: 'text-yellow-400',
-    // },
-    // {
-    //   icon: Target,
-    //   title: '목표지향',
-    //   description: '명확한 목표를 설정하고 체계적으로 접근하여 성과를 달성합니다.',
-    //   color: 'text-green-400',
-    // },
-    // {
-    //   icon: Users,
-    //   title: '협업',
-    //   description: '팀워크를 중시하며 함께 성장할 수 있는 환경을 만들어갑니다.',
-    //   color: 'text-blue-400',
-    // },
+    {
+      icon: Lightbulb,
+      title: 'UI/UX 고민',
+      description: '실제 사용자의 입장에서 서비스를 생각하며 더 보완할 수 있는 방법을 고민합니다.',
+      color: 'text-yellow-400',
+    },
+    {
+      icon: Users,
+      title: '협업의 자세',
+      description: '서비스의 성장을 위해 겸손한 자세로 타 직군과 적극적으로 논의합니다.',
+      color: 'text-blue-400',
+    },
   ]
 
   return (
@@ -83,7 +77,7 @@ const About = () => {
             className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
             안녕하세요! 저는 <span className="text-cosmic-300 font-semibold">공진용</span>입니다. 
-            기술과 창의성을 결합하여 의미 있는 디지털 경험을 만드는 것을 목표로 합니다.
+            기록을 중요하게 생각하며, 고객에 알맞는 UI/UX를 고민하고 협업의 자세로 다른 직군과 소통합니다.
           </motion.p>
         </motion.div>
 
@@ -97,14 +91,13 @@ const About = () => {
             <div className="glass-effect p-8 rounded-2xl">
               <h3 className="text-2xl font-bold mb-4 text-cosmic-300">나의 이야기</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-                개발의 세계에 입문한 지 얼마 되지 않았지만, 매일 새로운 기술을 배우고 
-                프로젝트를 통해 성장해나가고 있습니다. 사용자 중심의 사고와 
-                아름다운 디자인에 대한 열정을 가지고 있습니다.
+                2021년부터 프론트엔드 개발자로 활동하며, 메뉴잇, 패스트뷰, 트럼피아에서 
+                다양한 프로젝트를 경험했습니다. 5000개 이상의 매장에서 사용하는 서비스를 개발하고, 
+                B2B 서비스 확대와 글로벌라이즈를 위한 i18n 도입 등 다양한 도전을 해왔습니다.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                단순히 코드를 작성하는 것을 넘어서, 사람들의 삶을 더 나아지게 만드는 
-                서비스를 개발하고 싶습니다. 기술과 예술의 경계에서 새로운 가능성을 
-                탐구하는 것이 저의 목표입니다.
+                컴포넌트 공통화로 6,000줄 이상의 코드를 감축하고, QA 인원 50% 감축에 따른 
+                고객 문의 자동화 서비스를 기획·디자인·개발하는 등 효율적인 개발을 추구합니다.
               </p>
             </div>
           </motion.div>
@@ -147,11 +140,11 @@ const About = () => {
             variants={itemVariants}
             className="glass-effect p-8 rounded-2xl max-w-4xl mx-auto"
           >
-            <h3 className="text-2xl font-bold mb-6 text-glow">미래의 비전</h3>
+            <h3 className="text-2xl font-bold mb-6 text-glow">주요 성과</h3>
             <p className="text-gray-300 leading-relaxed text-lg">
-              앞으로 더 많은 사람들과 함께 의미 있는 프로젝트를 진행하고, 
-              기술을 통해 세상을 조금 더 아름답고 편리한 곳으로 만들어가고 싶습니다. 
-              지속적인 학습과 성장을 통해 더 나은 개발자가 되어가겠습니다.
+              메뉴잇에서 25개 이상의 Feature 개발과 500개 이상의 BugFix를 수행했으며, 
+              패스트뷰에서는 운영팀의 업무 효율을 50% 이상 향상시켰습니다. 
+              컴포넌트 공통화와 자동화 서비스를 통해 개발 효율성과 사용자 경험을 지속적으로 개선해왔습니다.
             </p>
           </motion.div>
         </motion.div>

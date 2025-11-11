@@ -242,9 +242,9 @@ const Projects = () => {
             const isExpanded = expandedCompany === group.company
 
             return (
-              <motion.div
+            <motion.div
                 key={group.company}
-                variants={itemVariants}
+              variants={itemVariants}
                 className="glass-effect rounded-2xl overflow-hidden"
               >
                 {/* Company Header - Clickable */}
@@ -315,12 +315,12 @@ const Projects = () => {
                                         {project.role && (
                                           <span className="text-xs text-mystic-400 font-medium bg-white/10 px-2 py-1 rounded">
                                             {project.role}
-                                          </span>
-                                        )}
-                                      </div>
+                    </span>
+                  )}
+                </div>
                                       <h4 className="text-xl font-bold text-white mb-2">{project.title}</h4>
                                       <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                        {project.summary || project.description}
+                                        {project.summary}
                                       </p>
 
                                       <div className="flex flex-wrap gap-2">
@@ -352,32 +352,32 @@ const Projects = () => {
                                   </div>
                                   <h4 className="text-xl font-bold text-white mb-2">{project.title}</h4>
                                   <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                                    {project.summary || project.description}
+                                    {project.summary}
                                   </p>
-
-                                  <div className="flex flex-wrap gap-2 mb-4">
-                                    {project.technologies.map((tech) => (
-                                      <span
-                                        key={tech}
+                
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
                                         className="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded-full"
-                                      >
-                                        {tech}
-                                      </span>
-                                    ))}
-                                  </div>
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
                                   {project.live && project.live !== '#' && (
-                                    <motion.a
-                                      href={project.live}
+                  <motion.a
+                    href={project.live}
                                       target="_blank"
                                       rel="noopener noreferrer"
-                                      whileHover={{ scale: 1.05 }}
-                                      whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                                       className="inline-flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
-                                    >
+                  >
                                       <ExternalLink size={16} />
                                       <span className="text-sm">Live Demo</span>
-                                    </motion.a>
+                  </motion.a>
                                   )}
                                 </div>
                               )}
@@ -414,7 +414,7 @@ const Projects = () => {
                                             <p className="text-gray-300 text-sm leading-relaxed">{project.learnings}</p>
                                           </div>
                                         )}
-                                      </div>
+                </div>
                                     </motion.div>
                                   )}
                                 </AnimatePresence>
@@ -422,8 +422,8 @@ const Projects = () => {
                             </motion.div>
                           )
                         })}
-                      </div>
-                    </motion.div>
+              </div>
+            </motion.div>
                   )}
                 </AnimatePresence>
               </motion.div>

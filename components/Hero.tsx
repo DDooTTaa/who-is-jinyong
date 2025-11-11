@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ChevronDown, Sparkles, Code2, Palette } from 'lucide-react'
+import Image from 'next/image'
 
 const Hero = () => {
   const containerVariants = {
@@ -45,8 +46,15 @@ const Hero = () => {
           >
             <div className="relative">
               <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-purple-500 to-blue-500 p-1">
-                <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
-                  <span className="text-4xl font-bold text-glow">JY</span>
+                <div className="w-full h-full rounded-full bg-black flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/공진용.png"
+                    alt="공진용"
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-cover rounded-full"
+                    priority
+                  />
                 </div>
               </div>
               <motion.div
@@ -67,8 +75,8 @@ const Hero = () => {
           variants={itemVariants}
           className="text-5xl md:text-7xl font-bold mb-6"
         >
-          <span className="text-glow bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Who is Jinyong?
+          <span className="text-glow bg-gradient-to-r from-purple-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
+            공진용
           </span>
         </motion.h1>
 
@@ -76,9 +84,9 @@ const Hero = () => {
           variants={itemVariants}
           className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
         >
-          <span className="text-cosmic-300">개발자</span>이자{' '}
-          <span className="text-mystic-300">창작자</span>, 그리고{' '}
-          <span className="text-glow">꿈꾸는 사람</span>
+          <span className="text-cosmic-300">FE </span>개발자,{' '}
+          <span className="text-mystic-300">좋은 문장</span>이 {' '}
+          <span className="text-glow">되고 싶은 사람</span>
         </motion.p>
 
         <motion.div
@@ -90,14 +98,7 @@ const Hero = () => {
             className="flex items-center space-x-2 glass-effect px-6 py-3 rounded-full"
           >
             <Code2 className="text-mystic-400" size={20} />
-            <span className="text-white">Full Stack Developer</span>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.05, y: -5 }}
-            className="flex items-center space-x-2 glass-effect px-6 py-3 rounded-full"
-          >
-            <Palette className="text-cosmic-400" size={20} />
-            <span className="text-white">UI/UX Designer</span>
+            <span className="text-white">FrontEnd Engineer</span>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.05, y: -5 }}

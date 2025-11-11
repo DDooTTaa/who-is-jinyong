@@ -68,16 +68,17 @@ const About = () => {
             className="text-4xl md:text-5xl font-bold mb-6"
           >
             <span className="text-glow bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-              About Me
+              About Me.
             </span>
           </motion.h2>
-          
+
           <motion.p
             variants={itemVariants}
             className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            안녕하세요! 저는 <span className="text-cosmic-300 font-semibold">공진용</span>입니다. 
-            기록을 중요하게 생각하며, 고객에 알맞는 UI/UX를 고민하고 협업의 자세로 다른 직군과 소통합니다.
+            안녕하세요! 좋은 문장이 꿈인 <span className="text-cosmic-300 font-semibold">공진용</span>입니다.
+            기록을 중요하게 생각하며, <br />
+            고객에 알맞는 UI/UX를 고민하고, 낮고 겸손한 자세로 다른 직군과 소통합니다.
           </motion.p>
         </motion.div>
 
@@ -89,15 +90,15 @@ const About = () => {
         >
           <motion.div variants={itemVariants}>
             <div className="glass-effect p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4 text-cosmic-300">나의 이야기</h3>
+              <h3 className="text-2xl font-bold mb-4 text-cosmic-300">Who is Jin...Yong?</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-                2021년부터 프론트엔드 개발자로 활동하며, 메뉴잇, 패스트뷰, 트럼피아에서 
-                다양한 프로젝트를 경험했습니다. 5000개 이상의 매장에서 사용하는 서비스를 개발하고, 
-                B2B 서비스 확대와 글로벌라이즈를 위한 i18n 도입 등 다양한 도전을 해왔습니다.
+                2021년부터 프론트엔드 개발자로 활동하며, 3개의 회사에서
+                다양한 프로젝트를 경험했습니다. 5000개 이상의 매장에서 사용하는 서비스를 개발하고,
+                서비스 배포, B2B 서비스 확대와 글로벌라이즈를 위한 i18n 도입 등 다양한 도전을 해왔습니다.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                컴포넌트 공통화로 6,000줄 이상의 코드를 감축하고, QA 인원 50% 감축에 따른 
-                고객 문의 자동화 서비스를 기획·디자인·개발하는 등 효율적인 개발을 추구합니다.
+                CS 인원 50% 감축에 따른 고객 문의 자동화 서비스를 기획·디자인·개발하는 등
+                문제를 파악하고 해결하는 과정에서 보람을 느낍니다.
               </p>
             </div>
           </motion.div>
@@ -141,11 +142,32 @@ const About = () => {
             className="glass-effect p-8 rounded-2xl max-w-4xl mx-auto"
           >
             <h3 className="text-2xl font-bold mb-6 text-glow">주요 성과</h3>
-            <p className="text-gray-300 leading-relaxed text-lg">
-              메뉴잇에서 25개 이상의 Feature 개발과 500개 이상의 BugFix를 수행했으며, 
-              패스트뷰에서는 운영팀의 업무 효율을 50% 이상 향상시켰습니다. 
-              컴포넌트 공통화와 자동화 서비스를 통해 개발 효율성과 사용자 경험을 지속적으로 개선해왔습니다.
-            </p>
+            <div className="space-y-4 text-left">
+              <div>
+                <h4 className="text-lg font-semibold text-cosmic-300 mb-2">메뉴잇 (2024.04 ~ 재직중)</h4>
+                <ul className="text-gray-300 space-y-2 text-sm leading-relaxed">
+                  <li>• <span className="font-semibold">QA 인원 50% 감축</span>에 따른 고객 문의 자동화 서비스 기획·디자인·개발</li>
+                  <li>• <span className="font-semibold">컴포넌트 공통화</span>로 6,000줄 이상의 코드 감축 및 유지보수 효율성 향상</li>
+                  <li>• <span className="font-semibold">i18n 도입</span>으로 서비스 전체 다국어 처리 (한국어, 영어) 구현</li>
+                  <li>• 25개 이상의 Feature 개발과 500개 이상의 BugFix 수행</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-mystic-300 mb-2">패스트뷰 (2022.05 ~ 2023.03)</h4>
+                <ul className="text-gray-300 space-y-2 text-sm leading-relaxed">
+                  <li>• <span className="font-semibold">운영팀의 업무 효율 50% 이상 향상</span> - CMS 및 광고 관리 서비스 개발</li>
+                  <li>• <span className="font-semibold">ITwizard(몽골) 원격 개발팀 리더</span>로서 Git-flow 기반 협업 프로세스 정착</li>
+                  <li>• API 표준화 가이드라인 수립 및 백엔드 팀과의 협업으로 구조 통합</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-yellow-400 mb-2">트럼피아 (2021.11 ~ 2022.04)</h4>
+                <ul className="text-gray-300 space-y-2 text-sm leading-relaxed">
+                  <li>• Vue 기반 SMS 투표 자동화 서비스 운영 및 개선</li>
+                  <li>• 100개 이상의 버그 픽스 및 레거시 코드 리팩토링</li>
+                </ul>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </div>

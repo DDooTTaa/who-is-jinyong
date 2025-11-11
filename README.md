@@ -15,7 +15,7 @@
 - **Frontend**: Next.js 14, React 18, TypeScript
 - **Styling**: Tailwind CSS, Custom CSS
 - **Animation**: Framer Motion
-- **Icons**: Lucide React
+- **Icons**: React Icons, Heroicons
 - **Deployment**: Vercel
 
 ## 📦 설치 및 실행
@@ -75,18 +75,49 @@ who-is-jinyong/
 
 ## 🚀 Vercel 배포
 
-### 1. Vercel CLI 설치
-\`\`\`bash
-npm i -g vercel
-\`\`\`
+### 방법 1: GitHub 연동 (권장)
 
-### 2. 배포
-\`\`\`bash
-vercel
-\`\`\`
+1. **Vercel에 로그인**
+   - [vercel.com](https://vercel.com)에 접속하여 GitHub 계정으로 로그인
 
-### 3. 자동 배포 설정
-GitHub 저장소와 연결하면 자동으로 배포됩니다.
+2. **프로젝트 Import**
+   - "Add New Project" 클릭
+   - GitHub 저장소 선택
+   - Vercel이 자동으로 Next.js 프로젝트를 감지
+
+3. **자동 배포**
+   - GitHub에 push할 때마다 자동으로 배포됩니다
+   - Production, Preview, Development 브랜치별로 자동 배포
+
+### 방법 2: Vercel CLI
+
+1. **Vercel CLI 설치**
+   \`\`\`bash
+   npm i -g vercel
+   \`\`\`
+
+2. **배포**
+   \`\`\`bash
+   vercel
+   \`\`\`
+
+3. **프로덕션 배포**
+   \`\`\`bash
+   vercel --prod
+   \`\`\`
+
+### 배포 전 확인사항
+
+- ✅ `package.json`에 빌드 스크립트가 있는지 확인
+- ✅ `next.config.js` 설정 확인
+- ✅ `public` 폴더의 이미지 파일 확인
+- ✅ 환경 변수가 필요한 경우 Vercel 대시보드에서 설정
+
+### 배포 후
+
+- 자동으로 HTTPS 적용
+- 글로벌 CDN으로 빠른 로딩 속도
+- 자동 스케일링
 
 ## 🎯 주요 섹션
 
@@ -121,7 +152,7 @@ GitHub 저장소와 연결하면 자동으로 배포됩니다.
 
 ## 📞 연락처
 
-- **이메일**: jinyong@example.com
+- **이메일**: wlswls8783@gmail.com
 - **GitHub**: [@jinyong](https://github.com/jinyong)
 - **LinkedIn**: [공진용](https://linkedin.com/in/jinyong)
 

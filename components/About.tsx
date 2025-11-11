@@ -40,16 +40,16 @@ const About = () => {
       color: 'text-red-400',
     },
     {
-      icon: Lightbulb,
-      title: 'UI/UX 고민',
-      description: '실제 사용자의 입장에서 서비스를 생각하며 더 보완할 수 있는 방법을 고민합니다.',
-      color: 'text-yellow-400',
-    },
-    {
       icon: Users,
       title: '협업의 자세',
       description: '서비스의 성장을 위해 겸손한 자세로 타 직군과 적극적으로 논의합니다.',
       color: 'text-blue-400',
+    },
+    {
+      icon: Lightbulb,
+      title: 'UI/UX 고민',
+      description: '실제 사용자의 입장에서 서비스를 생각하며 더 보완할 수 있는 방법을 고민합니다.',
+      color: 'text-yellow-400',
     },
   ]
 

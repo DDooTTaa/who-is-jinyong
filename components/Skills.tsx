@@ -36,8 +36,8 @@ const Skills = () => {
     {
       title: 'Frontend',
       icon: FaCode,
-      color: 'from-blue-400 to-cyan-400',
-      iconColor: 'text-blue-400',
+      color: 'from-purple-400 to-purple-500',
+      iconColor: 'text-purple-400',
       skills: [
         { name: 'React', level: 90, icon: FaReact },
         { name: 'Vue.js', level: 85, icon: SiVuedotjs },
@@ -49,8 +49,8 @@ const Skills = () => {
     {
       title: 'State & Style',
       icon: FaPalette,
-      color: 'from-green-400 to-emerald-400',
-      iconColor: 'text-green-400',
+      color: 'from-blue-400 to-blue-500',
+      iconColor: 'text-blue-400',
       skills: [
         { name: 'Redux-saga', level: 85, icon: SiRedux },
         { name: 'VueX', level: 80, icon: FaLayerGroup },
@@ -63,8 +63,8 @@ const Skills = () => {
     {
       title: 'Tools & DevOps',
       icon: FaBolt,
-      color: 'from-purple-400 to-pink-400',
-      iconColor: 'text-purple-400',
+      color: 'from-yellow-400 to-yellow-400',
+      iconColor: 'text-yellow-400',
       skills: [
         { name: 'Git', level: 90, icon: FaGitAlt },
         { name: 'GitHub Actions', level: 80, icon: FaGithub },

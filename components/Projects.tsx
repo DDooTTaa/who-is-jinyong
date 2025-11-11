@@ -173,7 +173,7 @@ const Projects = () => {
       company: '트럼피아',
       period: '2021.11 ~ 2022.04',
       description: '미국의 SMS, 이메일, 메시지 자동 관리 & 운영 B2B 솔루션 서비스',
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-yellow-400 to-yellow-400',
       projects: [
         {
           title: 'Trumpia',

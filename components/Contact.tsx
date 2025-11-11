@@ -29,6 +29,13 @@ const Contact = () => {
 
   const contactInfo = [
     {
+      icon: MessageCircle,
+      title: 'Blog',
+      value: 'https://ddoottaa.tistory.com/',
+      link: 'https://ddoottaa.tistory.com/',
+      color: 'text-purple-400'
+    },
+    {
       icon: Mail,
       title: 'Email',
       value: 'wlswls8783@gmail.com',
@@ -40,14 +47,7 @@ const Contact = () => {
       title: 'Phone',
       value: '010-8981-1131',
       link: 'tel:+821089811131',
-      color: 'text-green-400'
-    },
-    {
-      icon: MessageCircle,
-      title: 'Blog',
-      value: 'https://ddoottaa.tistory.com/',
-      link: 'https://ddoottaa.tistory.com/',
-      color: 'text-purple-400'
+      color: 'text-yellow-400'
     }
   ]
 

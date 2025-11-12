@@ -90,7 +90,7 @@ const About = () => {
         >
           <motion.div variants={itemVariants}>
             <div className="glass-effect p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4 text-cosmic-300">Who is Jin...Yong?</h3>
+              <h3 className="text-2xl font-bold mb-4 text-cosmic-300">내 소개</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
                 2021년부터 프론트엔드 개발자로 활동하며, 3개의 회사에서
                 다양한 프로젝트를 경험했습니다. 5000개 이상의 매장에서 사용하는 서비스를 개발하고,

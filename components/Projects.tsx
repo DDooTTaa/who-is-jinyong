@@ -16,7 +16,7 @@ const Projects = () => {
       company: '메뉴잇',
       period: '2024.04 ~ 재직중',
       description: '5000개 이상 매장에서 사용하는 다목적 관리 & 운영 서비스',
-      color: 'from-purple-500 to-blue-500',
+      color: 'bg-purple-500',
       projects: [
         {
           title: 'B2B 대응 화이트 라벨링',
@@ -134,7 +134,7 @@ const Projects = () => {
       company: '패스트뷰',
       period: '2022.05 ~ 2023.03',
       description: '350개 이상의 파트너사의 콘텐츠에 대한 광고, 트래픽 분석을 제공하는 솔루션',
-      color: 'from-blue-500 to-cyan-500',
+      color: 'bg-blue-500',
       projects: [
         {
           title: 'ViewUs (CMS)',
@@ -173,7 +173,7 @@ const Projects = () => {
       company: '트럼피아',
       period: '2021.11 ~ 2022.04',
       description: '미국의 SMS, 이메일, 메시지 자동 관리 & 운영 B2B 솔루션 서비스',
-      color: 'from-yellow-400 to-yellow-400',
+      color: 'bg-yellow-400',
       projects: [
         {
           title: 'Trumpia',
@@ -227,7 +227,7 @@ const Projects = () => {
             variants={itemVariants}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            <span className="text-glow bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="text-glow text-purple-400">
               Projects.
             </span>
           </motion.h2>
@@ -256,7 +256,7 @@ const Projects = () => {
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4">
-                      <div className={`p-3 rounded-xl bg-gradient-to-r ${group.color}`}>
+                      <div className={`p-3 rounded-xl ${group.color}`}>
                         <Building2 className="text-white" size={24} />
                       </div>
                       <div>

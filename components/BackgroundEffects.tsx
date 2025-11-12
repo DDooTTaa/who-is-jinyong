@@ -7,12 +7,12 @@ const BackgroundEffects = () => {
 
   useEffect(() => {
     const generateParticles = () => {
-      const newParticles = Array.from({ length: 20 }, (_, i) => ({
+      const newParticles = Array.from({ length: 30 }, (_, i) => ({
         id: i,
         x: Math.random() * 100,
         y: Math.random() * 100,
-        size: Math.random() * 4 + 1,
-        delay: Math.random() * 8,
+        size: Math.random() * 8 + 2,
+        delay: Math.random() * 4,
       }))
       setParticles(newParticles)
     }
@@ -23,27 +23,28 @@ const BackgroundEffects = () => {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none">
       {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-indigo-900/20 animate-pulse" />
+      <div className="absolute inset-0 bg-white-900/20" />
       
       {/* Floating particles */}
       {particles.map((particle) => (
         <div
           key={particle.id}
-          className="absolute rounded-full bg-gradient-to-r from-purple-400 to-blue-400 opacity-30 floating-particle"
+          className="absolute bg-white opacity-30 floating-particle"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,
             width: `${particle.size}px`,
             height: `${particle.size}px`,
             animationDelay: `${particle.delay}s`,
+            clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
           }}
         />
       ))}
 
       {/* Mystical orbs */}
-      <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-xl animate-float" />
-      <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-xl animate-float" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-xl animate-float" style={{ animationDelay: '4s' }} />
+      <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-purple-500/20 rounded-full blur-xl animate-float" />
+      <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-blue-500/20 rounded-full blur-xl animate-float" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-purple-500/20 rounded-full blur-xl animate-float" style={{ animationDelay: '4s' }} />
 
       {/* Grid pattern */}
       <div 

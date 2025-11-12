@@ -67,7 +67,7 @@ const About = () => {
             variants={itemVariants}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            <span className="text-glow bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="text-glow text-purple-400">
               About Me.
             </span>
           </motion.h2>
@@ -146,8 +146,8 @@ const About = () => {
               <div>
                 <h4 className="text-lg font-semibold text-cosmic-300 mb-2">메뉴잇 (2024.04 ~ 재직중)</h4>
                 <ul className="text-gray-300 space-y-2 text-sm leading-relaxed">
-                  <li>• <span className="font-semibold">QA 인원 50% 감축</span>에 따른 고객 문의 자동화 서비스 기획·디자인·개발</li>
-                  <li>• <span className="font-semibold">컴포넌트 공통화</span>로 6,000줄 이상의 코드 감축 및 유지보수 효율성 향상</li>
+                  <li>• <span className="font-semibold">CS 인원 50% 감축</span>에 따른 고객 문의 자동화 서비스 기획·디자인·개발</li>
+                  <li>• <span className="font-semibold">컴포넌트 공통화</span>로 30,000줄 이상의 코드 감축 및 유지보수 효율성 향상</li>
                   <li>• <span className="font-semibold">i18n 도입</span>으로 서비스 전체 다국어 처리 (한국어, 영어) 구현</li>
                   <li>• 25개 이상의 Feature 개발과 500개 이상의 BugFix 수행</li>
                 </ul>
@@ -156,7 +156,7 @@ const About = () => {
                 <h4 className="text-lg font-semibold text-mystic-300 mb-2">패스트뷰 (2022.05 ~ 2023.03)</h4>
                 <ul className="text-gray-300 space-y-2 text-sm leading-relaxed">
                   <li>• <span className="font-semibold">운영팀의 업무 효율 50% 이상 향상</span> - CMS 및 광고 관리 서비스 개발</li>
-                  <li>• <span className="font-semibold">ITwizard(몽골) 원격 개발팀 리더</span>로서 Git-flow 기반 협업 프로세스 정착</li>
+                  <li>• <span className="font-semibold">ITwizard(몽골) 개발팀의 리더</span>로서 Git-flow 기반 협업 프로세스 정착</li>
                   <li>• API 표준화 가이드라인 수립 및 백엔드 팀과의 협업으로 구조 통합</li>
                 </ul>
               </div>

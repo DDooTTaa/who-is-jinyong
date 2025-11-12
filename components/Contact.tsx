@@ -103,7 +103,7 @@ const Contact = () => {
             variants={itemVariants}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            <span className="text-glow bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="text-glow text-purple-400">
               Contact.
             </span>
           </motion.h2>
@@ -223,7 +223,7 @@ const Contact = () => {
                   type="submit"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:from-purple-600 hover:to-blue-600 transition-all duration-300"
+                  className="w-full bg-purple-500 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:bg-purple-600 transition-all duration-300"
                 >
                   <Send size={20} />
                   <span>메시지 보내기</span>

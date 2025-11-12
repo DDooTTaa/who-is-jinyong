@@ -36,7 +36,7 @@ const Skills = () => {
     {
       title: 'Frontend',
       icon: FaCode,
-      color: 'from-purple-400 to-purple-500',
+      color: 'bg-purple-500',
       iconColor: 'text-purple-400',
       skills: [
         { name: 'React', level: 90, icon: FaReact },
@@ -49,7 +49,7 @@ const Skills = () => {
     {
       title: 'State & Style',
       icon: FaPalette,
-      color: 'from-blue-400 to-blue-500',
+      color: 'bg-blue-500',
       iconColor: 'text-blue-400',
       skills: [
         { name: 'Redux-saga', level: 85, icon: SiRedux },
@@ -63,7 +63,7 @@ const Skills = () => {
     {
       title: 'Tools & DevOps',
       icon: FaBolt,
-      color: 'from-yellow-400 to-yellow-400',
+      color: 'bg-yellow-400',
       iconColor: 'text-yellow-400',
       skills: [
         { name: 'Git', level: 90, icon: FaGitAlt },
@@ -114,7 +114,7 @@ const Skills = () => {
             variants={itemVariants}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            <span className="text-glow bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="text-glow text-purple-400">
               Skills.
             </span>
           </motion.h2>
@@ -143,7 +143,7 @@ const Skills = () => {
                 className="glass-effect p-6 rounded-2xl"
               >
                 <div className="flex items-center mb-6">
-                  <div className={`p-3 rounded-xl bg-gradient-to-r ${category.color} mr-4`}>
+                  <div className={`p-3 rounded-xl ${category.color} mr-4`}>
                     <SkillIcon className="text-white" size={24} />
                   </div>
                   <h3 className="text-2xl font-bold text-white">{category.title}</h3>

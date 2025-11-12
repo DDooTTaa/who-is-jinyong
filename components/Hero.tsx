@@ -41,12 +41,12 @@ const Hero = () => {
           className="mb-8"
         >
           <motion.div
-            whileHover={{ scale: 1.1, rotate: 5 }}
+            whileHover={{ scale: 1.1, rotate: 10 }}
             className="inline-block mb-6"
           >
             <div className="relative">
-              <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-purple-500 to-blue-500 p-1">
-                <div className="w-full h-full rounded-full bg-black overflow-hidden relative">
+              <div className="w-36 h-36 mx-auto rounded-full bg-white-500 p-1">
+                <div className="w-full h-full rounded-full bg-white overflow-hidden relative">
                   <Image
                     src="/공진용.png"
                     alt="공진용"
@@ -54,19 +54,14 @@ const Hero = () => {
                     className="object-cover rounded-full scale-125"
                     style={{ objectPosition: 'center center' }}
                     priority
-                    sizes="128px"
+                    sizes="144px"
                   />
                 </div>
               </div>
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-border"
-                style={{
-                  background: 'conic-gradient(from 0deg, #a855f7, #0ea5e9, #a855f7)',
-                  WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                  WebkitMaskComposite: 'xor',
-                }}
+                className="absolute inset-0 rounded-full border-2 border-white-500"
               />
             </div>
           </motion.div>
@@ -76,7 +71,7 @@ const Hero = () => {
           variants={itemVariants}
           className="text-5xl md:text-7xl font-bold mb-6"
         >
-          <span className="text-glow bg-gradient-to-r from-purple-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
+          <span className="text-glow text-purple-400">
             공진용
           </span>
         </motion.h1>
@@ -85,9 +80,9 @@ const Hero = () => {
           variants={itemVariants}
           className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
         >
-          <span className="text-cosmic-300">FE </span>개발자,{' '}
+          <span className="text-cosmic-300">Front</span> Engineer,{' '}
           <span className="text-mystic-300">좋은 문장</span>이 {' '}
-          <span className="text-glow">되고 싶은 사람</span>
+          <span className="text-glow">될 개발자</span>
         </motion.p>
 
         <motion.div

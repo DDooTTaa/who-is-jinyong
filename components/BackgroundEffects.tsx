@@ -29,7 +29,7 @@ const BackgroundEffects = () => {
       {particles.map((particle) => (
         <div
           key={particle.id}
-          className="absolute bg-white opacity-30 floating-particle"
+          className="absolute bg-white opacity-10 floating-particle"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,

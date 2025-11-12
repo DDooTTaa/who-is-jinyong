@@ -34,7 +34,7 @@ module.exports = {
         }
       },
       fontFamily: {
-        'mystic': ['Inter', 'system-ui', 'sans-serif'],
+        'mystic': ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

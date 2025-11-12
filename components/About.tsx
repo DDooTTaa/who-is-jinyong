@@ -78,7 +78,7 @@ const About = () => {
           >
             안녕하세요! 좋은 문장이 꿈인 <span className="text-cosmic-300 font-semibold">공진용</span>입니다.
             기록을 중요하게 생각하며, <br />
-            고객에 알맞는 UI/UX를 고민하고, 낮고 겸손한 자세로 다른 직군과 소통합니다.
+            고객에 알맞는 UI/UX를 고민하고, 겸손한 자세로 다른 직군과 소통합니다.
           </motion.p>
         </motion.div>
 

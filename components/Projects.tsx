@@ -228,7 +228,7 @@ const Projects = () => {
             className="text-4xl md:text-5xl font-bold mb-6"
           >
             <span className="text-glow text-purple-400">
-              Projects.
+              Careers.
             </span>
           </motion.h2>
         </motion.div>

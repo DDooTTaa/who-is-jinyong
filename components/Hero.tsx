@@ -80,7 +80,7 @@ const Hero = () => {
           variants={itemVariants}
           className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
         >
-          <span className="text-cosmic-300">Front</span> Engineer,{' '}
+          <span className="text-cosmic-300">FrontEnd</span> Enginner,{' '}
           <span className="text-mystic-300">좋은 문장</span>이 {' '}
           <span className="text-glow">될 개발자</span>
         </motion.p>

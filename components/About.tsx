@@ -35,20 +35,20 @@ const About = () => {
   const values = [
     {
       icon: Heart,
-      title: '기록의 습관',
-      description: '협업 과정에 필요없는 리소스를 줄이기 위해 메모하는 습관을 항상 노력합니다.',
+      title: '메모하는 습관',
+      description: '불필요한 리소스를 줄이기 위해 업무일지를 꼼꼼히 작성하려고 노력합니다.',
       color: 'text-red-400',
     },
     {
       icon: Users,
       title: '협업의 자세',
-      description: '서비스의 성장을 위해 겸손한 자세로 타 직군과 적극적으로 논의합니다.',
+      description: '성장을 위해 겸손한 자세로 타 직군과 적극적으로 논의합니다.',
       color: 'text-blue-400',
     },
     {
       icon: Lightbulb,
-      title: 'UI/UX 고민',
-      description: '실제 사용자의 입장에서 서비스를 생각하며 더 보완할 수 있는 방법을 고민합니다.',
+      title: 'UI/UX에 대한 고민',
+      description: '사용자의 입장에서 서비스를 생각하는 것을 잘합니다.',
       color: 'text-yellow-400',
     },
   ]
@@ -76,7 +76,7 @@ const About = () => {
             variants={itemVariants}
             className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            안녕하세요! 좋은 문장이 꿈인 <span className="text-cosmic-300 font-semibold">공진용</span>입니다.
+            안녕하세요! <span className="text-cosmic-300 font-semibold">FE </span>공진용입니다.
             기록을 중요하게 생각하며, <br />
             고객에 알맞는 UI/UX를 고민하고, 겸손한 자세로 다른 직군과 소통합니다.
           </motion.p>
@@ -86,27 +86,29 @@ const About = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid md:grid-cols-2 gap-12 items-center mb-16"
+          className="grid md:grid-cols-2 gap-12 items-stretch mb-12"
         >
-          <motion.div variants={itemVariants}>
-            <div className="glass-effect p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4 text-cosmic-300">내 소개</h3>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                2021년부터 프론트엔드 개발자로 활동하며, 3개의 회사에서
-                다양한 프로젝트를 경험했습니다. 5000개 이상의 매장에서 사용하는 서비스를 개발하고,
-                서비스 배포, B2B 서비스 확대와 글로벌라이즈를 위한 i18n 도입 등 다양한 도전을 해왔습니다.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                CS 인원 50% 감축에 따른 고객 문의 자동화 서비스를 기획·디자인·개발하는 등
-                문제를 파악하고 해결하는 과정에서 보람을 느낍니다.
-              </p>
+          <motion.div variants={itemVariants} className="h-full">
+            <div className="relative h-full">
+              <div className="glass-effect p-8 rounded-2xl h-full flex flex-col">
+                <h3 className="text-2xl font-bold mb-4 text-cosmic-300">Introduction</h3>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  2021년부터 프론트엔드 개발자로 활동하며, 3개의 회사에서
+                  다양한 프로젝트를 경험했습니다. 5000개 이상의 매장에서 사용하는 서비스를 개발하고,
+                  서비스 배포, B2B 서비스 확대와 글로벌라이즈를 위한 i18n 도입 등 다양한 도전을 해왔습니다.
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  CS 인원 50% 감축에 따른 고객 문의 자동화 서비스를 기획·디자인·개발하는 등
+                  문제를 파악하고 해결하는 과정에서 보람을 느낍니다.
+                </p>
+              </div>
             </div>
           </motion.div>
 
-          <motion.div variants={itemVariants}>
-            <div className="relative">
-              <div className="glass-effect p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold mb-6 text-mystic-300">핵심 가치</h3>
+          <motion.div variants={itemVariants} className="h-full">
+            <div className="relative h-full">
+              <div className="glass-effect p-8 rounded-2xl h-full flex flex-col">
+                <h3 className="text-2xl font-bold mb-6 text-cosmic-300">Values</h3>
                 <div className="space-y-4">
                   {values.map((value, index) => (
                     <motion.div
@@ -121,7 +123,31 @@ const About = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold text-white mb-1">{value.title}</h4>
-                        <p className="text-gray-300 text-sm">{value.description}</p>
+                        <p className="text-gray-300 text-sm">
+                          {value.title === '메모하는 습관' ? (
+                            <>
+                              불필요한 리소스를 줄이기 위해{' '}
+                              <a
+                                href="https://www.notion.so/shorthaired-circle-c672/8-fff922a4999481d2bbf5f7c4c63ccafc"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="relative inline-block font-semibold hover:opacity-90 transition-opacity"
+                              >
+                                <span className="relative z-10">업무일지</span>
+                                <span
+                                  className="absolute bottom-0 left-0 right-0 h-3 bg-pink-400 opacity-60 -rotate-1 transform"
+                                  style={{
+                                    width: 'calc(100% + 4px)',
+                                    left: '-2px',
+                                    bottom: '2px'
+                                  }}
+                                />
+                              </a>를 꼼꼼히 작성합니다.
+                            </>
+                          ) : (
+                            value.description
+                          )}
+                        </p>
                       </div>
                     </motion.div>
                   ))}
@@ -139,7 +165,7 @@ const About = () => {
         >
           <motion.div
             variants={itemVariants}
-            className="glass-effect p-8 rounded-2xl max-w-4xl mx-auto"
+            className="glass-effect p-8 rounded-2xl h-full flex flex-col"
           >
             <h3 className="text-2xl font-bold mb-6 text-glow">주요 성과</h3>
             <div className="space-y-4 text-left">

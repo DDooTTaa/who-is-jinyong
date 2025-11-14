@@ -471,7 +471,7 @@ const Projects = () => {
             >
               <h4 className="text-xl font-bold text-white mb-2">Enjoy Rectangle</h4>
               <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                4x4 회전 퍼즐 게임 - 빈 그리드에 색을 칠하고 뒤집고 회전해 보세요!
+                4x4 회전 퍼즐 게임 - 색을 칠하고 뒤집고 회전해 보세요!
               </p>
               <motion.a
                 href="https://enjoy-rectangle.vercel.app/puzzle"

@@ -326,10 +326,9 @@ const Contact = () => {
             variants={itemVariants}
             className="glass-effect p-8 rounded-2xl max-w-4xl mx-auto"
           >
-            <h3 className="text-2xl font-bold mb-4 text-glow">함께 만들어가요</h3>
+            <h3 className="text-2xl font-bold mb-4 text-glow">감사합니다.</h3>
             <p className="text-gray-300 leading-relaxed">
-              새로운 아이디어나 프로젝트에 대해 이야기하고 싶으시다면 언제든 연락주세요. 
-              <span className="text-cosmic-300 font-semibold">함께 성장</span>할 수 있는 기회를 만들어가고 싶습니다.
+            Creating is my way of leaving a <span className="text-cosmic-300 font-semibold">small mark</span> on the world.
             </p>
           </motion.div>
         </motion.div>

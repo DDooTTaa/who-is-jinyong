@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Menu, X, Home, User, Code, Mail } from 'lucide-react'
+import { Menu, X, Home, User, Code, Mail, Users } from 'lucide-react'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,6 +20,7 @@ const Navigation = () => {
     { name: '홈', href: '#home', icon: Home },
     { name: '소개', href: '#about', icon: User },
     { name: '프로젝트', href: '#projects', icon: Code },
+    { name: '커뮤니티', href: '#community', icon: Users },
     { name: '연락처', href: '#contact', icon: Mail },
   ]
 

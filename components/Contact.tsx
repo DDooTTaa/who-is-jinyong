@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, MessageCircle } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, MessageCircle, CheckCircle, XCircle, Loader2 } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const ref = useRef(null)
@@ -13,11 +14,60 @@ const Contact = () => {
     email: '',
     message: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [statusMessage, setStatusMessage] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+    setStatusMessage('')
+
+    try {
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || ''
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || ''
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS 환경 변수가 설정되지 않았습니다.')
+      }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        publicKey
+      )
+
+      setSubmitStatus('success')
+      setStatusMessage('메시지가 성공적으로 전송되었습니다!')
+      setFormData({ name: '', email: '', message: '' })
+      
+      // 3초 후 상태 초기화
+      setTimeout(() => {
+        setSubmitStatus('idle')
+        setStatusMessage('')
+      }, 3000)
+    } catch (error: any) {
+      console.error('EmailJS Error:', error)
+      setSubmitStatus('error')
+      
+      // Gmail API 인증 오류에 대한 구체적인 메시지
+      if (error?.text?.includes('insufficient authentication scopes') || error?.text?.includes('Gmail_API')) {
+        setStatusMessage('Gmail 인증 오류: EmailJS 대시보드에서 Gmail 서비스를 재연동해주세요.')
+      } else if (error?.text) {
+        setStatusMessage(`전송 실패: ${error.text}`)
+      } else {
+        setStatusMessage('메시지 전송에 실패했습니다. 다시 시도해주세요.')
+      }
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -219,14 +269,47 @@ const Contact = () => {
                   />
                 </div>
 
+                {submitStatus !== 'idle' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`p-4 rounded-lg flex items-center space-x-2 ${
+                      submitStatus === 'success'
+                        ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                        : 'bg-red-500/20 text-red-400 border border-red-500/30'
+                    }`}
+                  >
+                    {submitStatus === 'success' ? (
+                      <CheckCircle size={20} />
+                    ) : (
+                      <XCircle size={20} />
+                    )}
+                    <span className="text-sm">{statusMessage}</span>
+                  </motion.div>
+                )}
+
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full bg-purple-500 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:bg-purple-600 transition-all duration-300"
+                  disabled={isSubmitting}
+                  whileHover={!isSubmitting ? { scale: 1.05 } : {}}
+                  whileTap={!isSubmitting ? { scale: 0.95 } : {}}
+                  className={`w-full bg-purple-500 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-all duration-300 ${
+                    isSubmitting
+                      ? 'opacity-50 cursor-not-allowed'
+                      : 'hover:bg-purple-600'
+                  }`}
                 >
-                  <Send size={20} />
-                  <span>메시지 보내기</span>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 size={20} className="animate-spin" />
+                      <span>전송 중...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send size={20} />
+                      <span>메시지 보내기</span>
+                    </>
+                  )}
                 </motion.button>
               </form>
             </div>

@@ -435,19 +435,57 @@ const Projects = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="mt-16 text-center"
+          className="mt-16"
         >
           <motion.div
             variants={itemVariants}
-            className="glass-effect p-8 rounded-2xl max-w-4xl mx-auto"
+            className="text-center mb-8"
           >
             <h3 className="text-2xl font-bold mb-4 text-glow">또 다른 경험</h3>
-            <p className="text-gray-300 leading-relaxed">
-              뇽뇽 <span className="text-cosmic-300 font-semibold">따따</span>라라
-              <span className="text-mystic-300 font-semibold">갸갸</span>
-              나나나
-            </p>
           </motion.div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <motion.div
+              variants={itemVariants}
+              className="glass-effect rounded-xl p-6 hover:bg-white/5 transition-colors"
+            >
+              <h4 className="text-xl font-bold text-white mb-2">Grand Festival</h4>
+              <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                큰고모 칠순 축하 프로젝트
+              </p>
+              <motion.a
+                href="https://github.com/sonyong4013/grandFestival/tree/main/grand_festival"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
+              >
+                <ExternalLink size={16} />
+                <span className="text-sm">GitHub</span>
+              </motion.a>
+            </motion.div>
+
+            <motion.div
+              variants={itemVariants}
+              className="glass-effect rounded-xl p-6 hover:bg-white/5 transition-colors"
+            >
+              <h4 className="text-xl font-bold text-white mb-2">Enjoy Rectangle</h4>
+              <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                4x4 회전 퍼즐 게임 - 빈 그리드에 색을 칠하고 뒤집고 회전해 보세요!
+              </p>
+              <motion.a
+                href="https://enjoy-rectangle.vercel.app/puzzle"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
+              >
+                <ExternalLink size={16} />
+                <span className="text-sm">Live Demo</span>
+              </motion.a>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

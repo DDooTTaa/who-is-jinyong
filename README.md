@@ -111,7 +111,29 @@ who-is-jinyong/
 - ✅ `package.json`에 빌드 스크립트가 있는지 확인
 - ✅ `next.config.js` 설정 확인
 - ✅ `public` 폴더의 이미지 파일 확인
-- ✅ 환경 변수가 필요한 경우 Vercel 대시보드에서 설정
+- ✅ **환경 변수 설정 (필수)**: Vercel 대시보드에서 EmailJS 환경 변수 설정
+
+### 환경 변수 설정 (EmailJS 연동)
+
+배포 후에도 이메일 전송 기능이 작동하려면 Vercel에 환경 변수를 설정해야 합니다:
+
+1. **Vercel 대시보드 접속**
+   - [vercel.com](https://vercel.com) → 프로젝트 선택 → Settings → Environment Variables
+
+2. **다음 환경 변수 추가**
+   ```
+   NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+   ```
+
+3. **각 환경에 적용**
+   - Production, Preview, Development 모두에 체크
+
+4. **재배포**
+   - 환경 변수 추가 후 자동으로 재배포되거나, 수동으로 Redeploy 실행
+
+**참고**: EmailJS는 클라이언트 사이드에서 동작하므로 서버 없이도 이메일 전송이 가능합니다.
 
 ### 배포 후
 

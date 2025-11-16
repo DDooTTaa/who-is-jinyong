@@ -1,13 +1,37 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { Heart, Lightbulb, Target, Users } from 'lucide-react'
+import { useRef, useState } from 'react'
+import { Heart, Lightbulb, Target, Users, X, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const About = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const [showRuleModal, setShowRuleModal] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  
+  const images = [
+    {
+      src: '/꾸준함.png',
+      alt: '주간 플래너',
+      title: '주간 플래너',
+      description: '매주 꾸준한 일정 관리',
+    },
+    {
+      src: '/점수표.png',
+      alt: '자체 포인트 제도',
+      title: '자체 포인트 제도',
+    }
+  ]
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % images.length)
+  }
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length)
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -47,8 +71,8 @@ const About = () => {
     },
     {
       icon: Lightbulb,
-      title: 'UI/UX에 대한 고민',
-      description: '사용자의 입장에서 서비스를 생각하는 것을 잘합니다.',
+      title: '꾸준함',
+      description: '관성을 잃지 않고 꾸준함을 잃지 않으려고 합니다.',
       color: 'text-yellow-400',
     },
   ]
@@ -144,6 +168,25 @@ const About = () => {
                                 />
                               </a>를 꼼꼼히 작성합니다.
                             </>
+                          ) : value.title === '꾸준함' ? (
+                            <>
+                              관성을 잃지 않고{' '}
+                              <button
+                                onClick={() => setShowRuleModal(true)}
+                                className="relative inline-block font-semibold hover:opacity-90 transition-opacity cursor-pointer"
+                              >
+                                <span className="relative z-10">규칙적이고</span>
+                                <span
+                                  className="absolute bottom-0 left-0 right-0 h-3 bg-yellow-400 opacity-60 -rotate-1 transform"
+                                  style={{
+                                    width: 'calc(100% + 4px)',
+                                    left: '-2px',
+                                    bottom: '2px'
+                                  }}
+                                />
+                              </button>{' '}
+                              꾸준함을 잃지 않으려고 합니다.
+                            </>
                           ) : (
                             value.description
                           )}
@@ -197,6 +240,107 @@ const About = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* 규칙적으로 팝업 모달 */}
+      <AnimatePresence>
+        {showRuleModal && (
+          <>
+            {/* 배경 오버레이 */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowRuleModal(false)}
+              className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            >
+              {/* 모달 컨텐츠 */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                onClick={(e) => e.stopPropagation()}
+                className="glass-effect rounded-2xl p-8 max-w-5xl w-full max-h-[90vh] overflow-y-auto relative"
+              >
+                {/* 닫기 버튼 */}
+                <button
+                  onClick={() => setShowRuleModal(false)}
+                  className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors p-2 z-10"
+                >
+                  <X size={24} />
+                </button>
+
+                {/* 이미지 캐러셀 */}
+                <div className="relative w-full">
+                  {/* 캐러셀 컨테이너 */}
+                  <div className="relative overflow-hidden rounded-xl">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={currentImageIndex}
+                        initial={{ opacity: 0, x: 100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -100 }}
+                        transition={{ duration: 0.3 }}
+                        className="w-full"
+                      >
+                        <div className="relative bg-white/5 rounded-xl p-4 border border-white/10">
+                          <img 
+                            src={images[currentImageIndex].src}
+                            alt={images[currentImageIndex].alt}
+                            className="w-full h-auto object-contain rounded-lg shadow-2xl mx-auto"
+                            style={{ minHeight: '500px', maxHeight: '600px' }}
+                          />
+                          <div className="absolute bottom-6 left-6 right-6 bg-black/70 backdrop-blur-sm rounded-lg p-4">
+                            <p className="text-white text-lg font-semibold text-center">
+                              {images[currentImageIndex].title}
+                            </p>
+                            <p className="text-gray-300 text-sm text-center mt-1">
+                              {images[currentImageIndex].description}
+                            </p>
+                          </div>
+                        </div>
+                      </motion.div>
+                    </AnimatePresence>
+
+                    {/* 이전 버튼 */}
+                    <button
+                      onClick={prevImage}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 backdrop-blur-sm text-white p-3 rounded-full transition-all z-10"
+                      aria-label="이전 이미지"
+                    >
+                      <ChevronLeft size={24} />
+                    </button>
+
+                    {/* 다음 버튼 */}
+                    <button
+                      onClick={nextImage}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 backdrop-blur-sm text-white p-3 rounded-full transition-all z-10"
+                      aria-label="다음 이미지"
+                    >
+                      <ChevronRight size={24} />
+                    </button>
+                  </div>
+
+                  {/* 인디케이터 */}
+                  <div className="flex justify-center gap-2 mt-6">
+                    {images.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentImageIndex(index)}
+                        className={`h-2 rounded-full transition-all ${
+                          index === currentImageIndex
+                            ? 'bg-yellow-400 w-8'
+                            : 'bg-white/30 w-2 hover:bg-white/50'
+                        }`}
+                        aria-label={`이미지 ${index + 1}로 이동`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </section>
   )
 }

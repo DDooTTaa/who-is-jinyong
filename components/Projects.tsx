@@ -249,7 +249,14 @@ const Projects = () => {
               >
                 {/* Company Header - Clickable */}
                 <motion.button
-                  onClick={() => setExpandedCompany(isExpanded ? null : group.company)}
+                  onClick={() => {
+                    // 다른 아코디언이 열려있으면 닫고 새 아코디언 열기
+                    if (expandedCompany && expandedCompany !== group.company) {
+                      setExpandedCompany(group.company)
+                    } else {
+                      setExpandedCompany(isExpanded ? null : group.company)
+                    }
+                  }}
                   className="w-full p-6 text-left"
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
@@ -443,7 +450,7 @@ const Projects = () => {
           >
             <h3 className="text-2xl font-bold mb-4 text-glow">Another Projects</h3>
           </motion.div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
             <motion.div
               variants={itemVariants}
               className="glass-effect rounded-xl p-6 hover:bg-white/5 transition-colors"

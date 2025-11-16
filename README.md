@@ -113,7 +113,9 @@ who-is-jinyong/
 - ✅ `public` 폴더의 이미지 파일 확인
 - ✅ **환경 변수 설정 (필수)**: Vercel 대시보드에서 EmailJS 환경 변수 설정
 
-### 환경 변수 설정 (EmailJS 연동)
+### 환경 변수 설정
+
+#### EmailJS 연동
 
 배포 후에도 이메일 전송 기능이 작동하려면 Vercel에 환경 변수를 설정해야 합니다:
 
@@ -134,6 +136,51 @@ who-is-jinyong/
    - 환경 변수 추가 후 자동으로 재배포되거나, 수동으로 Redeploy 실행
 
 **참고**: EmailJS는 클라이언트 사이드에서 동작하므로 서버 없이도 이메일 전송이 가능합니다.
+
+#### Google Tag Manager (GTM) 연동
+
+방문자 추적을 위해 GTM을 설정할 수 있습니다:
+
+1. **로컬 개발 환경 설정**
+   - 프로젝트 루트에 `.env.local` 파일 생성
+   - 다음 환경 변수 추가:
+   ```
+   NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
+   ```
+   - GTM ID는 [Google Tag Manager](https://tagmanager.google.com/)에서 확인 가능
+
+2. **Vercel 배포 환경 설정**
+   - Vercel 대시보드 → Settings → Environment Variables
+   - `NEXT_PUBLIC_GTM_ID` 환경 변수 추가
+   - Production, Preview, Development 모두에 체크
+   - 재배포 실행
+
+3. **GTM에서 확인**
+   - GTM 대시보드에서 실시간 방문자 추적 확인 가능
+   - 태그 설정을 통해 다양한 이벤트 추적 가능
+
+#### Google Analytics 4 (GA4) 연동
+
+방문자 분석을 위해 GA4를 설정할 수 있습니다:
+
+1. **로컬 개발 환경 설정**
+   - 프로젝트 루트에 `.env.local` 파일 생성 또는 수정
+   - 다음 환경 변수 추가:
+   ```
+   NEXT_PUBLIC_GA_ID=G-RH7SPHKMF5
+   ```
+   - 기본값으로 `G-RH7SPHKMF5`가 설정되어 있어 환경 변수가 없어도 동작합니다
+   - GA 측정 ID는 [Google Analytics](https://analytics.google.com/)에서 확인 가능
+
+2. **Vercel 배포 환경 설정**
+   - Vercel 대시보드 → Settings → Environment Variables
+   - `NEXT_PUBLIC_GA_ID` 환경 변수 추가 (선택사항)
+   - Production, Preview, Development 모두에 체크
+   - 재배포 실행
+
+3. **GA4에서 확인**
+   - Google Analytics 대시보드에서 실시간 방문자 확인 가능
+   - 페이지뷰, 이벤트 등 다양한 분석 데이터 확인 가능
 
 ### 배포 후
 

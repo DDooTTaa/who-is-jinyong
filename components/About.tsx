@@ -328,8 +328,8 @@ const About = () => {
                         onClick={() => setCurrentImageIndex(index)}
                         className={`h-2 rounded-full transition-all ${
                           index === currentImageIndex
-                            ? 'bg-yellow-400 w-8'
-                            : 'bg-white/30 w-2 hover:bg-white/50'
+                            ? 'bg-purple-500 w-8'
+                            : 'bg-purple-500/30 w-2 hover:bg-purple-500/50'
                         }`}
                         aria-label={`이미지 ${index + 1}로 이동`}
                       />

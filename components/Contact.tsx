@@ -97,7 +97,7 @@ const Contact = () => {
       title: 'Phone',
       value: '010-8981-1131',
       link: 'tel:+821089811131',
-      color: 'text-yellow-400'
+      color: 'text-violet-400'
     }
   ]
 

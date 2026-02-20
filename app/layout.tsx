@@ -6,12 +6,12 @@ import BackgroundEffects from '@/components/BackgroundEffects'
 
 export const metadata: Metadata = {
   title: '공진용 포트폴리오',
-  description: '좋은 문장이 될 개발자,공진용',
+  description: 'AI 시대에 좋은 문장이 될 개발자,공진용',
   keywords: ['포트폴리오', '개발자', '공진용', 'Next.js', 'React'],
   authors: [{ name: '공진용' }],
   openGraph: {
     title: '공진용 포트폴리오',
-    description: '좋은 문장이 될 개발자,공진용',
+    description: 'AI 시대에 좋은 문장이 될 개발자,공진용',
     type: 'website',
   },
 }

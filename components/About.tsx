@@ -1,37 +1,13 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
-import { Heart, Lightbulb, Target, Users, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useRef } from 'react'
+import { Heart, Lightbulb, Target, Users, Sparkles } from 'lucide-react'
 
 const About = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
-  const [showRuleModal, setShowRuleModal] = useState(false)
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  
-  const images = [
-    {
-      src: '/꾸준함.png',
-      alt: '주간 플래너',
-      title: '주간 플래너',
-      description: '매주 꾸준한 일정 관리',
-    },
-    {
-      src: '/점수표.png',
-      alt: '자체 포인트 제도',
-      title: '자체 포인트 제도',
-    }
-  ]
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % images.length)
-  }
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length)
-  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -58,9 +34,15 @@ const About = () => {
 
   const values = [
     {
+      icon: Sparkles,
+      title: 'AI 활용',
+      description: 'AI를 통해 기획·디자인·개발·검증 과정을 신속하게 진행합니다.',
+      color: 'text-violet-400',
+    },
+    {
       icon: Heart,
       title: '메모하는 습관',
-      description: '불필요한 리소스를 줄이기 위해 업무일지를 꼼꼼히 작성하려고 노력합니다.',
+      description: '불필요한 리소스를 줄이기 위해 AI를 활용해 업무일지를 꼼꼼히 작성합니다.',
       color: 'text-red-400',
     },
     {
@@ -68,12 +50,6 @@ const About = () => {
       title: '협업의 자세',
       description: '성장을 위해 겸손한 자세로 타 직군과 적극적으로 논의합니다.',
       color: 'text-blue-400',
-    },
-    {
-      icon: Lightbulb,
-      title: '꾸준함',
-      description: '관성을 잃지 않고 꾸준함을 잃지 않으려고 합니다.',
-      color: 'text-yellow-400',
     },
   ]
 
@@ -102,7 +78,8 @@ const About = () => {
           >
             안녕하세요! <span className="text-cosmic-300 font-semibold">FE </span>공진용입니다.
             기록을 중요하게 생각하며, <br />
-            고객에 알맞는 UI/UX를 고민하고, 겸손한 자세로 다른 직군과 소통합니다.
+            고객에 알맞는 UI/UX를 고민하고, 겸손한 자세로 다른 직군과 소통합니다.{' '}
+            <span className="text-mystic-300">AI를 적극 활용해 기획부터 구현까지 빠르게 만드는 것</span>을 지향합니다.
           </motion.p>
         </motion.div>
 
@@ -121,9 +98,9 @@ const About = () => {
                   다양한 프로젝트를 경험했습니다. 5000개 이상의 매장에서 사용하는 서비스를 개발하고,
                   서비스 배포, B2B 서비스 확대와 글로벌라이즈를 위한 i18n 도입 등 다양한 도전을 해왔습니다.
                 </p>
-                <p className="text-gray-300 leading-relaxed">
-                  CS 인원 50% 감축에 따른 고객 문의 자동화 서비스를 기획·디자인·개발하는 등
-                  문제를 파악하고 해결하는 과정에서 보람을 느낍니다.
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  <span className="text-mystic-300 font-medium">AI First</span>로 기획·디자인·백엔드까지 직접 만드는 것을 즐기며,
+                  품질을 유지하며 빠르게 프로젝트를 만드는 개발자 공진용입니다
                 </p>
               </div>
             </div>
@@ -148,7 +125,22 @@ const About = () => {
                       <div>
                         <h4 className="font-semibold text-white mb-1">{value.title}</h4>
                         <p className="text-gray-300 text-sm">
-                          {value.title === '메모하는 습관' ? (
+                          {value.title === 'AI 활용' ? (
+                            <>
+                              <span className="relative inline-block font-semibold">
+                                <span className="relative z-10">AI</span>
+                                <span
+                                  className="absolute bottom-0 left-0 right-0 h-3 bg-violet-400 opacity-60 -rotate-1 transform"
+                                  style={{
+                                    width: 'calc(100% + 4px)',
+                                    left: '-2px',
+                                    bottom: '2px'
+                                  }}
+                                />
+                              </span>
+                              를 통해 기획·디자인·개발·검증 과정을 신속하게 진행합니다.
+                            </>
+                          ) : value.title === '메모하는 습관' ? (
                             <>
                               불필요한 리소스를 줄이기 위해{' '}
                               <a
@@ -167,25 +159,6 @@ const About = () => {
                                   }}
                                 />
                               </a>를 꼼꼼히 작성합니다.
-                            </>
-                          ) : value.title === '꾸준함' ? (
-                            <>
-                              관성을 잃지 않고{' '}
-                              <button
-                                onClick={() => setShowRuleModal(true)}
-                                className="relative inline-block font-semibold hover:opacity-90 transition-opacity cursor-pointer"
-                              >
-                                <span className="relative z-10">규칙적이고</span>
-                                <span
-                                  className="absolute bottom-0 left-0 right-0 h-3 bg-yellow-400 opacity-60 -rotate-1 transform"
-                                  style={{
-                                    width: 'calc(100% + 4px)',
-                                    left: '-2px',
-                                    bottom: '2px'
-                                  }}
-                                />
-                              </button>{' '}
-                              꾸준함을 잃지 않으려고 합니다.
                             </>
                           ) : (
                             value.description
@@ -219,6 +192,7 @@ const About = () => {
                   <li>• <span className="font-semibold">컴포넌트 공통화</span>로 30,000줄 이상의 코드 감축 및 유지보수 효율성 향상</li>
                   <li>• <span className="font-semibold">i18n 도입</span>으로 서비스 전체 다국어 처리 (한국어, 영어) 구현</li>
                   <li>• 25개 이상의 Feature 개발과 500개 이상의 BugFix 수행</li>
+                  <li>• <span className="font-semibold">AI</span>를 활용하여 대표님의 아이디어를 신속하게 개발 및 검증</li>
                 </ul>
               </div>
               <div>
@@ -230,7 +204,7 @@ const About = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-yellow-400 mb-2">트럼피아 (2021.11 ~ 2022.04)</h4>
+                <h4 className="text-lg font-semibold text-violet-400 mb-2">트럼피아 (2021.11 ~ 2022.04)</h4>
                 <ul className="text-gray-300 space-y-2 text-sm leading-relaxed">
                   <li>• Vue 기반 SMS 투표 자동화 서비스 운영 및 개선</li>
                   <li>• 100개 이상의 버그 픽스 및 레거시 코드 리팩토링</li>
@@ -240,107 +214,6 @@ const About = () => {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* 규칙적으로 팝업 모달 */}
-      <AnimatePresence>
-        {showRuleModal && (
-          <>
-            {/* 배경 오버레이 */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setShowRuleModal(false)}
-              className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            >
-              {/* 모달 컨텐츠 */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                onClick={(e) => e.stopPropagation()}
-                className="glass-effect rounded-2xl p-8 max-w-5xl w-full max-h-[90vh] overflow-y-auto relative"
-              >
-                {/* 닫기 버튼 */}
-                <button
-                  onClick={() => setShowRuleModal(false)}
-                  className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors p-2 z-10"
-                >
-                  <X size={24} />
-                </button>
-
-                {/* 이미지 캐러셀 */}
-                <div className="relative w-full">
-                  {/* 캐러셀 컨테이너 */}
-                  <div className="relative overflow-hidden rounded-xl">
-                    <AnimatePresence mode="wait">
-                      <motion.div
-                        key={currentImageIndex}
-                        initial={{ opacity: 0, x: 100 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -100 }}
-                        transition={{ duration: 0.3 }}
-                        className="w-full"
-                      >
-                        <div className="relative bg-white/5 rounded-xl p-4 border border-white/10">
-                          <img 
-                            src={images[currentImageIndex].src}
-                            alt={images[currentImageIndex].alt}
-                            className="w-full h-auto object-contain rounded-lg shadow-2xl mx-auto"
-                            style={{ minHeight: '500px', maxHeight: '600px' }}
-                          />
-                          <div className="absolute bottom-6 left-6 right-6 bg-black/70 backdrop-blur-sm rounded-lg p-4">
-                            <p className="text-white text-lg font-semibold text-center">
-                              {images[currentImageIndex].title}
-                            </p>
-                            <p className="text-gray-300 text-sm text-center mt-1">
-                              {images[currentImageIndex].description}
-                            </p>
-                          </div>
-                        </div>
-                      </motion.div>
-                    </AnimatePresence>
-
-                    {/* 이전 버튼 */}
-                    <button
-                      onClick={prevImage}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 backdrop-blur-sm text-white p-3 rounded-full transition-all z-10"
-                      aria-label="이전 이미지"
-                    >
-                      <ChevronLeft size={24} />
-                    </button>
-
-                    {/* 다음 버튼 */}
-                    <button
-                      onClick={nextImage}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 backdrop-blur-sm text-white p-3 rounded-full transition-all z-10"
-                      aria-label="다음 이미지"
-                    >
-                      <ChevronRight size={24} />
-                    </button>
-                  </div>
-
-                  {/* 인디케이터 */}
-                  <div className="flex justify-center gap-2 mt-6">
-                    {images.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentImageIndex(index)}
-                        className={`h-2 rounded-full transition-all ${
-                          index === currentImageIndex
-                            ? 'bg-purple-500 w-8'
-                            : 'bg-purple-500/30 w-2 hover:bg-purple-500/50'
-                        }`}
-                        aria-label={`이미지 ${index + 1}로 이동`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
     </section>
   )
 }

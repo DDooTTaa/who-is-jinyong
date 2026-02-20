@@ -24,7 +24,8 @@ import {
   SiSass,
   SiJira,
   SiNotion,
-  SiGoogletagmanager
+  SiGoogletagmanager,
+  SiFirebase
 } from 'react-icons/si'
 import { HiChartBar } from 'react-icons/hi'
 
@@ -63,12 +64,13 @@ const Skills = () => {
     {
       title: 'Tools & DevOps',
       icon: FaBolt,
-      color: 'bg-yellow-400',
-      iconColor: 'text-yellow-400',
+      color: 'bg-violet-400',
+      iconColor: 'text-violet-400',
       skills: [
         { name: 'Git', level: 90, icon: FaGitAlt },
         { name: 'GitHub Actions', level: 80, icon: FaGithub },
         { name: 'AWS CloudFront', level: 75, icon: FaAws },
+        { name: 'Firebase', level: 80, icon: SiFirebase },
         { name: 'Jira', level: 85, icon: SiJira },
         { name: 'Notion', level: 90, icon: SiNotion },
         { name: 'Amplitude', level: 80, icon: HiChartBar },
@@ -112,12 +114,18 @@ const Skills = () => {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold mb-6"
+            className="text-4xl md:text-5xl font-bold mb-4"
           >
             <span className="text-glow text-purple-400">
               Skills.
             </span>
           </motion.h2>
+          <motion.p
+            variants={itemVariants}
+            className="text-gray-400 max-w-2xl mx-auto"
+          >
+            AI 도구를 활용해 기획·개발 속도를 높이고, 품질을 유지합니다.
+          </motion.p>
         </motion.div>
 
         <motion.div

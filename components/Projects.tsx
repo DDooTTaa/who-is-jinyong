@@ -173,7 +173,7 @@ const Projects = () => {
       company: '트럼피아',
       period: '2021.11 ~ 2022.04',
       description: '미국의 SMS, 이메일, 메시지 자동 관리 & 운영 B2B 솔루션 서비스',
-      color: 'bg-yellow-400',
+      color: 'bg-violet-400',
       projects: [
         {
           title: 'Trumpia',
@@ -451,6 +451,33 @@ const Projects = () => {
             <h3 className="text-2xl font-bold mb-4 text-glow">Another Projects</h3>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            {/* 비즈블라 - 강조 카드 (전체 너비) */}
+            <motion.a
+              href="https://bizblah.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              variants={itemVariants}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="md:col-span-2 glass-effect rounded-xl p-8 hover:bg-white/10 transition-all duration-300 border border-cyan-500/30 hover:border-cyan-400/60 ring-2 ring-cyan-500/20 hover:ring-cyan-400/40 shadow-lg shadow-cyan-500/10"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div>
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 mb-3">
+                    AI First
+                  </span>
+                  <h4 className="text-2xl font-bold text-white mb-2">비즈블라(BIZBLAH)</h4>
+                  <p className="text-gray-300 leading-relaxed max-w-2xl">
+                    프랜차이즈 점주 익명 커뮤니티. 백엔드·디자인·기획·데이터 수집 직접 설계·구현.
+                  </p>
+                </div>
+                <span className="inline-flex items-center space-x-2 text-cyan-300 hover:text-cyan-200 font-medium shrink-0">
+                  <ExternalLink size={20} />
+                  <span>Live Demo</span>
+                </span>
+              </div>
+            </motion.a>
+
             <motion.div
               variants={itemVariants}
               className="glass-effect rounded-xl p-6 hover:bg-white/5 transition-colors"

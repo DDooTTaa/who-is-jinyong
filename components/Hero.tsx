@@ -78,11 +78,17 @@ const Hero = () => {
 
         <motion.p
           variants={itemVariants}
-          className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
+          className="text-xl md:text-2xl text-gray-300 mb-4 max-w-2xl mx-auto leading-relaxed"
         >
-          <span className="text-cosmic-300">FrontEnd</span> Enginner,{' '}
-          <span className="text-mystic-300">좋은 문장</span>이 {' '}
-          <span className="text-glow">될 개발자</span>
+          <span className="text-cosmic-300">FrontEnd</span> Engineer,{' '}
+          <span className="text-mystic-300">AI First</span>{' '}
+          <span className="text-glow">개발자</span>
+        </motion.p>
+        <motion.p
+          variants={itemVariants}
+          className="text-base md:text-lg text-gray-400 mb-8 max-w-xl mx-auto"
+        >
+          AI를 활용해 빠르게 프로젝트를 만드는 개발자 공진용입니다.
         </motion.p>
 
         <motion.div
@@ -98,9 +104,16 @@ const Hero = () => {
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.05, y: -5 }}
+            className="flex items-center space-x-2 glass-effect px-6 py-3 rounded-full border border-violet-400/30"
+          >
+            <Sparkles className="text-violet-400" size={20} />
+            <span className="text-white">AI First</span>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.05, y: -5 }}
             className="flex items-center space-x-2 glass-effect px-6 py-3 rounded-full"
           >
-            <Sparkles className="text-yellow-400" size={20} />
+            <Palette className="text-mystic-400" size={20} />
             <span className="text-white">Innovation Seeker</span>
           </motion.div>
         </motion.div>

@@ -1,9 +1,8 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, MessageCircle, CheckCircle, XCircle, Loader2 } from 'lucide-react'
+import { Mail, Phone, Send, Github, MessageCircle, CheckCircle, XCircle, Loader2 } from 'lucide-react'
 import emailjs from '@emailjs/browser'
 
 const Contact = () => {
@@ -53,15 +52,15 @@ const Contact = () => {
         setSubmitStatus('idle')
         setStatusMessage('')
       }, 3000)
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('EmailJS Error:', error)
       setSubmitStatus('error')
       
-      // Gmail API 인증 오류에 대한 구체적인 메시지
-      if (error?.text?.includes('insufficient authentication scopes') || error?.text?.includes('Gmail_API')) {
+      const err = error as { text?: string }
+      if (err?.text?.includes('insufficient authentication scopes') || err?.text?.includes('Gmail_API')) {
         setStatusMessage('Gmail 인증 오류: EmailJS 대시보드에서 Gmail 서비스를 재연동해주세요.')
-      } else if (error?.text) {
-        setStatusMessage(`전송 실패: ${error.text}`)
+      } else if (err?.text) {
+        setStatusMessage(`전송 실패: ${err.text}`)
       } else {
         setStatusMessage('메시지 전송에 실패했습니다. 다시 시도해주세요.')
       }
@@ -338,5 +337,4 @@ const Contact = () => {
 }
 
 export default Contact
-
 

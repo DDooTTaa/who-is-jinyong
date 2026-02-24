@@ -1,7 +1,6 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
-import { useInView } from 'framer-motion'
+import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { ExternalLink, ChevronDown, Building2, ChevronRight } from 'lucide-react'
 
@@ -527,5 +526,4 @@ const Projects = () => {
 }
 
 export default Projects
-
 

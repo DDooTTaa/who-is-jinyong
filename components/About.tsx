@@ -1,9 +1,8 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Heart, Lightbulb, Target, Users, Sparkles } from 'lucide-react'
+import { Heart, Users, Sparkles } from 'lucide-react'
 
 const About = () => {
   const ref = useRef(null)
@@ -219,5 +218,4 @@ const About = () => {
 }
 
 export default About
-
 

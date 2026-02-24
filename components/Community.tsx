@@ -1,7 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Calendar, BookOpen } from 'lucide-react'
 
@@ -134,4 +133,3 @@ const Community = () => {
 }
 
 export default Community
-

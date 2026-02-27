@@ -2,7 +2,8 @@
 
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { ExternalLink, ChevronDown, Building2, ChevronRight } from 'lucide-react'
+import { ExternalLink, ChevronDown, Building2, ChevronRight, Database, BarChart2 } from 'lucide-react'
+import { SiReact, SiVite, SiFirebase, SiGoogletagmanager, SiTailwindcss, SiDart, SiFlutter, SiVercel } from 'react-icons/si'
 
 const Projects = () => {
   const ref = useRef(null)
@@ -466,9 +467,19 @@ const Projects = () => {
                     AI First
                   </span>
                   <h4 className="text-2xl font-bold text-white mb-2">Rotape</h4>
-                  <p className="text-gray-300 leading-relaxed max-w-2xl">
+                  <p className="text-gray-300 leading-relaxed max-w-2xl mb-4">
                     Rotape - 한 컷의 테이프처럼 영원할 당신의 인연.
                   </p>
+                  <div className="flex flex-wrap gap-3">
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="React 19"><SiReact size={24} className="text-[#61dafb]" /></span>
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Vite 7"><SiVite size={24} className="text-[#646cff]" /></span>
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Recharts"><BarChart2 size={24} className="text-[#8884d8]" /></span>
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Firebase (Auth, Firestore)"><SiFirebase size={24} className="text-[#ffca28]" /></span>
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Firebase Storage"><Database size={24} className="text-cyan-400" /></span>
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="GTM"><SiGoogletagmanager size={24} className="text-[#e37400]" /></span>
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Tailwind"><SiTailwindcss size={24} className="text-[#06b6d4]" /></span>
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Vercel"><SiVercel size={24} className="text-white" /></span>
+                  </div>
                 </div>
                 <span className="inline-flex items-center space-x-2 text-cyan-300 hover:text-cyan-200 font-medium shrink-0">
                   <ExternalLink size={20} />
@@ -493,9 +504,18 @@ const Projects = () => {
                     AI First
                   </span>
                   <h4 className="text-2xl font-bold text-white mb-2">비즈블라(BIZBLAH)</h4>
-                  <p className="text-gray-300 leading-relaxed max-w-2xl">
+                  <p className="text-gray-300 leading-relaxed max-w-2xl mb-4">
                     프랜차이즈 점주 익명 커뮤니티. 백엔드·디자인·기획·데이터 수집 직접 설계·구현.
                   </p>
+                  <div className="flex flex-wrap gap-3">
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="React 19"><SiReact size={24} className="text-[#61dafb]" /></span>
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Vite 7"><SiVite size={24} className="text-[#646cff]" /></span>
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Recharts"><BarChart2 size={24} className="text-[#8884d8]" /></span>
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Firebase (Auth, Firestore)"><SiFirebase size={24} className="text-[#ffca28]" /></span>
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="GTM"><SiGoogletagmanager size={24} className="text-[#e37400]" /></span>
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Tailwind"><SiTailwindcss size={24} className="text-[#06b6d4]" /></span>
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Vercel"><SiVercel size={24} className="text-white" /></span>
+                  </div>
                 </div>
                 <span className="inline-flex items-center space-x-2 text-cyan-300 hover:text-cyan-200 font-medium shrink-0">
                   <ExternalLink size={20} />
@@ -512,6 +532,11 @@ const Projects = () => {
               <p className="text-gray-300 text-sm leading-relaxed mb-4">
                 큰고모 칠순 축하 프로젝트
               </p>
+              <div className="flex flex-wrap gap-3 mb-4">
+                <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Dart"><SiDart size={24} className="text-[#0175C2]" /></span>
+                <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Flutter"><SiFlutter size={24} className="text-[#02569B]" /></span>
+                <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Vercel"><SiVercel size={24} className="text-white" /></span>
+              </div>
               <motion.a
                 href="https://github.com/sonyong4013/grandFestival/tree/main/grand_festival"
                 target="_blank"
@@ -533,6 +558,11 @@ const Projects = () => {
               <p className="text-gray-300 text-sm leading-relaxed mb-4">
                 4x4 회전 퍼즐 게임 - 색을 칠하고 뒤집고 회전해 보세요!
               </p>
+              <div className="flex flex-wrap gap-3 mb-4">
+                <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="React"><SiReact size={24} className="text-[#61dafb]" /></span>
+                <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Vite"><SiVite size={24} className="text-[#646cff]" /></span>
+                <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Vercel"><SiVercel size={24} className="text-white" /></span>
+              </div>
               <motion.a
                 href="https://enjoy-rectangle.vercel.app/puzzle"
                 target="_blank"

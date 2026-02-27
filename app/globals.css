@@ -101,4 +101,45 @@ a {
   animation-delay: -6s;
 }
 
+/* Tech icon tooltip */
+.tech-icon-tooltip {
+  position: relative;
+}
+.tech-icon-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  padding: 6px 10px;
+  background: rgba(30, 30, 40, 0.95);
+  color: white;
+  font-size: 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.tech-icon-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-2px);
+  border: 6px solid transparent;
+  border-top-color: rgba(30, 30, 40, 0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.tech-icon-tooltip:hover::after,
+.tech-icon-tooltip:hover::before {
+  opacity: 1;
+}
+.tech-icon-tooltip:hover::after {
+  transform: translateX(-50%) translateY(-4px);
+}
+
 

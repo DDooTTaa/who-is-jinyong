@@ -506,7 +506,7 @@ const Projects = () => {
                   </span>
                   <h4 className="text-2xl font-bold text-white mb-2">비즈블라(BIZBLAH)</h4>
                   <p className="text-gray-300 leading-relaxed max-w-2xl mb-4">
-                    프랜차이즈 점주 익명 커뮤니티. 백엔드·디자인·기획·데이터 수집 직접 설계·구현.
+                    프랜차이즈 점주 익명 커뮤니티.AI 를 활용해 3일 안에 FE·BE·디자인·기획·데이터 수집 구현.
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="React 19"><SiReact size={24} className="text-[#61dafb]" /></span>
@@ -562,7 +562,6 @@ const Projects = () => {
               </p>
               <div className="flex flex-wrap gap-3 mb-4">
                 <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="React"><SiReact size={24} className="text-[#61dafb]" /></span>
-                <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Next.js"><SiNextdotjs size={24} className="text-white" /></span>
                 <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Vite"><SiVite size={24} className="text-[#646cff]" /></span>
                 <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Vercel"><SiVercel size={24} className="text-white" /></span>
               </div>

@@ -3,7 +3,7 @@
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { ExternalLink, ChevronDown, Building2, ChevronRight, Database, BarChart2 } from 'lucide-react'
-import { SiReact, SiVite, SiFirebase, SiGoogletagmanager, SiTailwindcss, SiDart, SiFlutter, SiVercel } from 'react-icons/si'
+import { SiReact, SiNextdotjs, SiVite, SiFirebase, SiGoogletagmanager, SiTailwindcss, SiDart, SiFlutter, SiVercel } from 'react-icons/si'
 
 const Projects = () => {
   const ref = useRef(null)
@@ -472,6 +472,7 @@ const Projects = () => {
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="React 19"><SiReact size={24} className="text-[#61dafb]" /></span>
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Next.js"><SiNextdotjs size={24} className="text-white" /></span>
                     <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Vite 7"><SiVite size={24} className="text-[#646cff]" /></span>
                     <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Recharts"><BarChart2 size={24} className="text-[#8884d8]" /></span>
                     <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Firebase (Auth, Firestore)"><SiFirebase size={24} className="text-[#ffca28]" /></span>
@@ -509,6 +510,7 @@ const Projects = () => {
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="React 19"><SiReact size={24} className="text-[#61dafb]" /></span>
+                    <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Next.js"><SiNextdotjs size={24} className="text-white" /></span>
                     <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Vite 7"><SiVite size={24} className="text-[#646cff]" /></span>
                     <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Recharts"><BarChart2 size={24} className="text-[#8884d8]" /></span>
                     <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Firebase (Auth, Firestore)"><SiFirebase size={24} className="text-[#ffca28]" /></span>
@@ -560,6 +562,7 @@ const Projects = () => {
               </p>
               <div className="flex flex-wrap gap-3 mb-4">
                 <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="React"><SiReact size={24} className="text-[#61dafb]" /></span>
+                <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Next.js"><SiNextdotjs size={24} className="text-white" /></span>
                 <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Vite"><SiVite size={24} className="text-[#646cff]" /></span>
                 <span className="tech-icon-tooltip cursor-help inline-flex" data-tooltip="Vercel"><SiVercel size={24} className="text-white" /></span>
               </div>

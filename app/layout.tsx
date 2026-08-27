@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
 import Navigation from '@/components/Navigation'
-import BackgroundEffects from '@/components/BackgroundEffects'
+import { ThemeProvider } from '@/components/ThemeProvider'
 
 export const metadata: Metadata = {
   title: '공진용 포트폴리오',
@@ -16,6 +16,8 @@ export const metadata: Metadata = {
   },
 }
 
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}catch(e){}})();`
+
 export default function RootLayout({
   children,
 }: {
@@ -25,9 +27,11 @@ export default function RootLayout({
   const gaId = process.env.NEXT_PUBLIC_GA_ID || 'G-RH7SPHKMF5'
 
   return (
-    <html lang="ko">
-      <body className="mystical-bg min-h-screen">
-        {/* Google Tag Manager */}
+    <html lang="ko" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body className="bg-canvas text-fg min-h-screen antialiased">
         {gtmId && (
           <>
             <Script
@@ -53,8 +57,7 @@ export default function RootLayout({
             </noscript>
           </>
         )}
-        
-        {/* Google Analytics 4 */}
+
         {gaId && (
           <>
             <Script
@@ -75,14 +78,12 @@ export default function RootLayout({
             />
           </>
         )}
-        
-        <BackgroundEffects />
-        <Navigation />
-        <main className="relative z-10">
-          {children}
-        </main>
+
+        <ThemeProvider>
+          <Navigation />
+          <main className="pt-16">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   )
 }
-

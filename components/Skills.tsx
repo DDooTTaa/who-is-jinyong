@@ -1,214 +1,145 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
 import {
-  FaCode,
-  FaPalette,
+  FaAws,
   FaBolt,
-  FaLayerGroup,
-  FaGitAlt,
-  FaReact,
-  FaJs,
+  FaCode,
   FaGithub,
-  FaAws
+  FaGitAlt,
+  FaJs,
+  FaLayerGroup,
+  FaPalette,
+  FaReact,
 } from 'react-icons/fa'
 import {
-  SiTypescript,
+  SiFirebase,
   SiFlutter,
-  SiRedux,
-  SiVuedotjs,
-  SiStyledcomponents,
-  SiTailwindcss,
-  SiSass,
+  SiGoogletagmanager,
   SiJira,
   SiNotion,
-  SiGoogletagmanager,
-  SiFirebase
+  SiRedux,
+  SiSass,
+  SiStyledcomponents,
+  SiTailwindcss,
+  SiTypescript,
+  SiVuedotjs,
 } from 'react-icons/si'
 import { HiChartBar } from 'react-icons/hi'
 
+const skillCategories = [
+  {
+    title: 'Frontend',
+    icon: FaCode,
+    skills: [
+      { name: 'React', level: 90, icon: FaReact, color: '#61dafb' },
+      { name: 'Vue.js', level: 85, icon: SiVuedotjs, color: '#42b883' },
+      { name: 'TypeScript', level: 85, icon: SiTypescript, color: '#3178c6' },
+      { name: 'JavaScript', level: 90, icon: FaJs, color: '#f1e05a' },
+      { name: 'Flutter', level: 70, icon: SiFlutter, color: '#02569B' },
+    ],
+  },
+  {
+    title: 'State & Style',
+    icon: FaPalette,
+    skills: [
+      { name: 'Redux-saga', level: 85, icon: SiRedux, color: '#764abc' },
+      { name: 'VueX', level: 80, icon: FaLayerGroup, color: '#42b883' },
+      { name: 'Redux-Thunk', level: 80, icon: SiRedux, color: '#764abc' },
+      { name: 'Styled-Component', level: 85, icon: SiStyledcomponents, color: '#db7093' },
+      { name: 'Tailwind CSS', level: 90, icon: SiTailwindcss, color: '#38bdf8' },
+      { name: 'SCSS', level: 85, icon: SiSass, color: '#c69' },
+    ],
+  },
+  {
+    title: 'Tools & DevOps',
+    icon: FaBolt,
+    skills: [
+      { name: 'Git', level: 90, icon: FaGitAlt, color: '#f05032' },
+      { name: 'GitHub Actions', level: 80, icon: FaGithub, color: 'currentColor' },
+      { name: 'AWS CloudFront', level: 75, icon: FaAws, color: '#ff9900' },
+      { name: 'Firebase', level: 80, icon: SiFirebase, color: '#ffca28' },
+      { name: 'Jira', level: 85, icon: SiJira, color: '#0052cc' },
+      { name: 'Notion', level: 90, icon: SiNotion, color: 'currentColor' },
+      { name: 'Amplitude', level: 80, icon: HiChartBar, color: '#1f883d' },
+      { name: 'GTM', level: 75, icon: SiGoogletagmanager, color: '#246fdb' },
+    ],
+  },
+]
+
+const languageBar = [
+  { name: 'TypeScript', pct: 38, color: '#3178c6' },
+  { name: 'JavaScript', pct: 22, color: '#f1e05a' },
+  { name: 'React / Vue', pct: 20, color: '#61dafb' },
+  { name: 'Flutter / Dart', pct: 12, color: '#02569B' },
+  { name: 'Other', pct: 8, color: '#8b949e' },
+]
+
 const Skills = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
-
-  const skillCategories = [
-    {
-      title: 'Frontend',
-      icon: FaCode,
-      color: 'bg-purple-500',
-      iconColor: 'text-purple-400',
-      skills: [
-        { name: 'React', level: 90, icon: FaReact },
-        { name: 'Vue.js', level: 85, icon: SiVuedotjs },
-        { name: 'TypeScript', level: 85, icon: SiTypescript },
-        { name: 'JavaScript', level: 90, icon: FaJs },
-        { name: 'Flutter', level: 70, icon: SiFlutter },
-      ]
-    },
-    {
-      title: 'State & Style',
-      icon: FaPalette,
-      color: 'bg-blue-500',
-      iconColor: 'text-blue-400',
-      skills: [
-        { name: 'Redux-saga', level: 85, icon: SiRedux },
-        { name: 'VueX', level: 80, icon: FaLayerGroup },
-        { name: 'Redux-Thunk', level: 80, icon: SiRedux },
-        { name: 'Styled-Component', level: 85, icon: SiStyledcomponents },
-        { name: 'Tailwind CSS', level: 90, icon: SiTailwindcss },
-        { name: 'SCSS', level: 85, icon: SiSass },
-      ]
-    },
-    {
-      title: 'Tools & DevOps',
-      icon: FaBolt,
-      color: 'bg-violet-400',
-      iconColor: 'text-violet-400',
-      skills: [
-        { name: 'Git', level: 90, icon: FaGitAlt },
-        { name: 'GitHub Actions', level: 80, icon: FaGithub },
-        { name: 'AWS CloudFront', level: 75, icon: FaAws },
-        { name: 'Firebase', level: 80, icon: SiFirebase },
-        { name: 'Jira', level: 85, icon: SiJira },
-        { name: 'Notion', level: 90, icon: SiNotion },
-        { name: 'Amplitude', level: 80, icon: HiChartBar },
-        { name: 'GTM', level: 75, icon: SiGoogletagmanager },
-      ]
-    }
-  ]
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut',
-      },
-    },
-  }
-
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="text-center mb-16"
-        >
-          <motion.h2
-            variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold mb-4"
-          >
-            <span className="text-glow text-purple-400">
-              Skills.
-            </span>
-          </motion.h2>
-          <motion.p
-            variants={itemVariants}
-            className="text-gray-400 max-w-2xl mx-auto"
-          >
-            AI 도구를 활용해 기획·개발 속도를 높이고, 품질을 유지합니다.
-          </motion.p>
-        </motion.div>
+    <section id="skills" className="mb-6">
+      <div className="mb-3 flex items-center justify-between">
+        <h2 className="text-base font-normal text-fg">
+          Skills <span className="text-fg-muted">· languages & tools</span>
+        </h2>
+      </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="grid md:grid-cols-3 gap-8"
-        >
-          {skillCategories.map((category, categoryIndex) => {
-              const SkillIcon = category.icon
+      <div className="gh-card p-4">
+        <p className="mb-4 text-sm text-fg-muted">
+          AI 도구를 활용해 기획·개발 속도를 높이고, 품질을 유지합니다.
+        </p>
+
+        <div className="mb-2 flex h-2 overflow-hidden rounded-full">
+          {languageBar.map((lang) => (
+            <div
+              key={lang.name}
+              className="h-full"
+              style={{ width: `${lang.pct}%`, background: lang.color }}
+              title={`${lang.name} ${lang.pct}%`}
+            />
+          ))}
+        </div>
+        <ul className="mb-6 flex flex-wrap gap-x-4 gap-y-1 text-xs text-fg">
+          {languageBar.map((lang) => (
+            <li key={lang.name} className="inline-flex items-center gap-1.5">
+              <span className="inline-block h-2 w-2 rounded-full" style={{ background: lang.color }} />
+              <span className="font-semibold">{lang.name}</span>
+              <span className="text-fg-muted">{lang.pct}%</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="grid gap-4 md:grid-cols-3">
+          {skillCategories.map((category) => {
+            const SkillIcon = category.icon
             return (
-              <motion.div
-                key={category.title}
-                variants={itemVariants}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="glass-effect p-6 rounded-2xl"
-              >
-                <div className="flex items-center mb-6">
-                  <div className={`p-3 rounded-xl ${category.color} mr-4`}>
-                    <SkillIcon className="text-white" size={24} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white">{category.title}</h3>
-                </div>
-
-                <div className="flex flex-wrap gap-3">
-                  {category.skills.map((skill, skillIndex) => (
-                    <motion.div
-                      key={skill.name}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                      transition={{
-                        delay: categoryIndex * 0.2 + skillIndex * 0.1 + 0.5,
-                        duration: 0.5,
-                        ease: "easeOut"
-                      }}
-                      whileHover={{ scale: 1.1, y: -5 }}
-                      className="relative group"
-                    >
-                      <div className={`
-                      glass-effect px-4 py-2 rounded-full
-                      flex items-center space-x-2
-                      border border-white/10
-                      hover:border-white/30 transition-all
-                      cursor-default
-                    `}>
-                        {skill.icon && (
-                          <skill.icon
-                            size={16}
-                            className={category.iconColor}
-                          />
-                        )}
-                        <span className="text-white font-medium text-sm">{skill.name}</span>
-                      </div>
-                    </motion.div>
+              <div key={category.title}>
+                <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold">
+                  <SkillIcon className="text-fg-muted" size={14} />
+                  {category.title}
+                </h3>
+                <div className="flex flex-wrap gap-1.5">
+                  {category.skills.map((skill) => (
+                    <span key={skill.name} className="gh-topic gap-1">
+                      <skill.icon size={12} style={{ color: skill.color }} />
+                      {skill.name}
+                    </span>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             )
           })}
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="mt-16 text-center"
-        >
-          <motion.div
-            variants={itemVariants}
-            className="glass-effect p-8 rounded-2xl max-w-4xl mx-auto"
-          >
-            <h3 className="text-2xl font-bold mb-4 text-glow">기술 경험</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <span className="text-cosmic-300 font-semibold">React, Vue, TypeScript</span>를 활용한 웹 서비스 개발과 
-              <span className="text-mystic-300 font-semibold"> Flutter</span>를 이용한 앱 개발 경험이 있습니다.
-              <span className="text-cosmic-300 font-semibold"> Redux-saga, VueX</span>를 통한 전역 상태 관리와
-              <span className="text-mystic-300 font-semibold"> GitHub Actions, AWS CloudFront</span>를 활용한 CI/CD 구현 경험을 보유하고 있습니다.
-            </p>
-          </motion.div>
-        </motion.div>
+        <p className="mt-6 border-t border-border pt-4 text-sm leading-6 text-fg-muted">
+          <strong className="text-fg">React, Vue, TypeScript</strong>를 활용한 웹 서비스 개발과{' '}
+          <strong className="text-fg">Flutter</strong>를 이용한 앱 개발 경험이 있습니다.{' '}
+          <strong className="text-fg">Redux-saga, VueX</strong>를 통한 전역 상태 관리와{' '}
+          <strong className="text-fg">GitHub Actions, AWS CloudFront</strong>를 활용한 CI/CD 구현 경험을
+          보유하고 있습니다.
+        </p>
       </div>
     </section>
   )
 }
 
 export default Skills
-

@@ -1,107 +1,81 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { Menu, X, Home, User, Code, Mail, Users } from 'lucide-react'
+import { useState } from 'react'
+import { BookOpen, Briefcase, LayoutDashboard, Mail, Menu, Moon, Sun, Users, X } from 'lucide-react'
+import { useTheme } from '@/components/ThemeProvider'
+
+const navItems = [
+  { name: 'Overview', href: '#home', icon: LayoutDashboard },
+  { name: 'README', href: '#about', icon: BookOpen },
+  { name: 'Repositories', href: '#projects', icon: Briefcase },
+  { name: 'Community', href: '#community', icon: Users },
+  { name: 'Contact', href: '#contact', icon: Mail },
+]
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const navItems = [
-    { name: '홈', href: '#home', icon: Home },
-    { name: '소개', href: '#about', icon: User },
-    { name: '프로젝트', href: '#projects', icon: Code },
-    { name: '커뮤니티', href: '#community', icon: Users },
-    { name: '연락처', href: '#contact', icon: Mail },
-  ]
+  const { theme, toggle, mounted } = useTheme()
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass-effect backdrop-blur-md' : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex-shrink-0"
-          >
-            <h1 className="text-2xl font-bold text-glow">
-              <span className="text-cosmic-400">Jinyong</span>
-              <span className="text-mystic-400">.dev</span>
-            </h1>
-          </motion.div>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-header/95 backdrop-blur">
+      <div className="mx-auto flex h-16 max-w-[1280px] items-center gap-4 px-4">
+        <a href="#home" className="flex shrink-0 items-center gap-2 text-fg">
+          <svg viewBox="0 0 16 16" width="32" height="32" aria-hidden="true" fill="currentColor">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+          </svg>
+          <span className="text-[16px] font-semibold tracking-tight">공진용</span>
+        </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navItems.map((item) => (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center space-x-2"
-                >
-                  <item.icon size={16} />
-                  <span>{item.name}</span>
-                </motion.a>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-white p-2"
+        <nav className="hidden min-w-0 flex-1 items-center gap-1 md:flex">
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="rounded-md px-2 py-1 text-sm font-medium text-fg-muted hover:bg-canvas-subtle hover:text-fg"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </motion.button>
-          </div>
+              {item.name}
+            </a>
+          ))}
+        </nav>
+
+        <div className="ml-auto flex items-center gap-2">
+          <button
+            type="button"
+            onClick={toggle}
+            className="gh-btn h-8 w-8 p-0"
+            aria-label={theme === 'dark' ? '라이트 모드로 전환' : '다크 모드로 전환'}
+          >
+            {mounted && theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setIsOpen((open) => !open)}
+            className="gh-btn h-8 w-8 p-0 md:hidden"
+            aria-label={isOpen ? '메뉴 닫기' : '메뉴 열기'}
+          >
+            {isOpen ? <X size={16} /> : <Menu size={16} />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-          className="md:hidden glass-effect"
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                whileHover={{ x: 10 }}
-                onClick={() => setIsOpen(false)}
-                className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 flex items-center space-x-2"
-              >
-                <item.icon size={18} />
-                <span>{item.name}</span>
-              </motion.a>
-            ))}
-          </div>
-        </motion.div>
+        <nav className="border-t border-border bg-header px-4 py-2 md:hidden">
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              onClick={() => setIsOpen(false)}
+              className="flex items-center gap-2 rounded-md px-2 py-2 text-sm text-fg hover:bg-canvas-subtle"
+            >
+              <item.icon size={16} className="text-fg-muted" />
+              {item.name}
+            </a>
+          ))}
+        </nav>
       )}
-    </motion.nav>
+    </header>
   )
 }
 
 export default Navigation
-

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
-import Navigation from '@/components/Navigation'
 import { ThemeProvider } from '@/components/ThemeProvider'
 
 export const metadata: Metadata = {
@@ -80,8 +79,7 @@ export default function RootLayout({
         )}
 
         <ThemeProvider>
-          <Navigation />
-          <main className="pt-16">{children}</main>
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>

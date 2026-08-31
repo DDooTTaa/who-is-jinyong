@@ -57,8 +57,9 @@ const About = () => {
         </div>
       </article>
 
-      <ContributionGraph />
       <PersonalProjects />
+
+      <ContributionGraph />
 
       <article className="gh-card mt-4 overflow-hidden">
         <div className="px-4 py-6 sm:px-8">

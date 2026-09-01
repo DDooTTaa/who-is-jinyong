@@ -180,6 +180,60 @@ a {
     color: #fff;
     background: var(--accent);
   }
+
+  .holo-pulse-border {
+    position: relative;
+    border-radius: 6px;
+    padding: 2px;
+    background: linear-gradient(
+      90deg,
+      #61dafb,
+      #a855f7,
+      #f472b6,
+      #fbbf24,
+      #61dafb
+    );
+    background-size: 300% 100%;
+    animation: holo-border-flow 3s linear infinite;
+  }
+
+  .holo-pulse-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: inherit;
+    background-size: inherit;
+    animation: holo-border-flow 3s linear infinite, holo-border-glow 2s ease-in-out infinite;
+    filter: blur(6px);
+    opacity: 0.45;
+    z-index: 0;
+  }
+
+  .holo-pulse-border > .holo-pulse-border-inner {
+    position: relative;
+    z-index: 1;
+    border: none;
+  }
+}
+
+@keyframes holo-border-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+@keyframes holo-border-glow {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
 
 .tech-icon-tooltip {

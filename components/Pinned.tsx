@@ -172,50 +172,68 @@ const PersonalProjects = () => {
 
             <div className="overflow-y-auto p-5">
               <div className="grid gap-4 md:grid-cols-2">
-                {projects.map((project) => (
-                  <div
-                    key={project.name}
-                    className="gh-card flex flex-col p-5 hover:bg-canvas-subtle"
-                  >
-                    <div className="mb-2 flex items-center gap-2">
-                      <Book size={16} className="text-fg-muted" />
-                      <span className="text-base font-semibold text-accent">{project.name}</span>
-                      <span className="rounded-full border border-border px-2 text-[12px] text-fg-muted">
-                        {project.visibility}
-                      </span>
-                    </div>
-                    <p className="mb-4 flex-1 text-sm leading-6 text-fg-muted">{project.description}</p>
-                    <div className="mb-4 flex flex-wrap gap-2">
-                      {project.icons.map((item) => (
-                        <span
-                          key={item.tooltip}
-                          className="tech-icon-tooltip inline-flex cursor-help"
-                          data-tooltip={item.tooltip}
-                        >
-                          <item.icon size={18} className={item.className} />
+                {projects.map((project) => {
+                  const isHoloCard = project.name === 'holo-card'
+                  const card = (
+                    <div
+                      className={`gh-card flex flex-col p-5 hover:bg-canvas-subtle${
+                        isHoloCard ? ' holo-pulse-border-inner' : ''
+                      }`}
+                    >
+                      <div className="mb-2 flex items-center gap-2">
+                        <Book size={16} className="text-fg-muted" />
+                        <span className="text-base font-semibold text-accent">{project.name}</span>
+                        <span className="rounded-full border border-border px-2 text-[12px] text-fg-muted">
+                          {project.visibility}
                         </span>
-                      ))}
+                      </div>
+                      <p className="mb-4 flex-1 text-sm leading-6 text-fg-muted">{project.description}</p>
+                      <div className="mb-4 flex flex-wrap gap-2">
+                        {project.icons.map((item) => (
+                          <span
+                            key={item.tooltip}
+                            className="tech-icon-tooltip inline-flex cursor-help"
+                            data-tooltip={item.tooltip}
+                          >
+                            <item.icon size={18} className={item.className} />
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex items-center justify-between gap-3 text-xs text-fg-muted">
+                        <span className="inline-flex items-center gap-1">
+                          <span
+                            className="h-3 w-3 rounded-full"
+                            style={{ background: project.languageColor }}
+                          />
+                          {project.language}
+                        </span>
+                        <a
+                          href={project.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-accent hover:underline"
+                        >
+                          <ExternalLink size={12} />
+                          열기
+                        </a>
+                      </div>
                     </div>
-                    <div className="flex items-center justify-between gap-3 text-xs text-fg-muted">
-                      <span className="inline-flex items-center gap-1">
-                        <span
-                          className="h-3 w-3 rounded-full"
-                          style={{ background: project.languageColor }}
-                        />
-                        {project.language}
-                      </span>
-                      <a
-                        href={project.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-accent hover:underline"
-                      >
-                        <ExternalLink size={12} />
-                        열기
-                      </a>
+                  )
+
+                  if (isHoloCard) {
+                    return (
+                      <div key={project.name} className="holo-pulse-border">
+                        {card}
+                      </div>
+                    )
+                  }
+
+                  return (
+                    <div key={project.name}>
+                      {card}
                     </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
             </div>
           </div>

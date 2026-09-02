@@ -37,19 +37,17 @@ const About = () => {
           <h2 className="mb-3 border-b border-border pb-2 text-[24px] font-semibold">
             About Me
           </h2>
-          <p className="mb-6 text-[16px] leading-7 text-fg">
+          <p className="mb-3 text-[16px] leading-7 text-fg">
             안녕하세요! <strong>FE</strong> 공진용입니다. 기록을 중요하게 생각하며, 고객에 알맞는 UI/UX를
             고민하고, 겸손한 자세로 다른 직군과 소통합니다.{' '}
             <strong>AI를 적극 활용해 기획부터 구현까지 빠르게 만드는 것</strong>을 지향합니다.
           </p>
-
-          <h3 className="mb-3 mt-8 border-b border-border pb-2 text-[20px] font-semibold">Introduction</h3>
-          <p className="mb-3 text-sm leading-6 text-fg">
+          <p className="mb-3 text-[16px] leading-7 text-fg">
             2021년부터 프론트엔드 개발자로 활동하며, 3개의 회사에서 다양한 프로젝트를 경험했습니다.
             5000개 이상의 매장에서 사용하는 서비스를 개발하고, 서비스 배포, B2B 서비스 확대와
             글로벌라이즈를 위한 i18n 도입 등 다양한 도전을 해왔습니다.
           </p>
-          <p className="mb-0 text-sm leading-6 text-fg">
+          <p className="mb-0 text-[16px] leading-7 text-fg">
             <span className="gh-topic mr-1">AI First</span>
             로 기획·디자인·백엔드까지 직접 만드는 것을 즐기며, 품질을 유지하며 빠르게 프로젝트를 만드는
             개발자 공진용입니다.

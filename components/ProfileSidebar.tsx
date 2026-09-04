@@ -5,7 +5,7 @@ import { BookOpen, Briefcase, Building2, Link as LinkIcon, Mail, MapPin, Phone, 
 
 const ProfileSidebar = () => {
   return (
-    <aside id="home" className="md:sticky md:top-12">
+    <aside className="md:sticky md:top-12">
       <div className="flex items-start gap-4 md:block">
         <div className="relative h-[88px] w-[88px] shrink-0 overflow-hidden rounded-full border border-border md:mb-4 md:h-[296px] md:w-full md:max-w-[296px]">
           <Image

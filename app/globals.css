@@ -85,6 +85,14 @@ body {
   background: var(--canvas);
 }
 
+#about,
+#skills,
+#projects,
+#community,
+#contact {
+  scroll-margin-top: 56px;
+}
+
 a {
   color: inherit;
   text-decoration: none;

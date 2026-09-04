@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type MouseEvent } from 'react'
 import { BookOpen, Briefcase, LayoutDashboard, Mail, Moon, Package, Sun, Users } from 'lucide-react'
 import { useTheme } from '@/components/ThemeProvider'
 
@@ -18,13 +18,18 @@ const ProfileTabs = () => {
   const { theme, toggle, mounted } = useTheme()
 
   useEffect(() => {
-    const ids = tabs.map((tab) => tab.href.slice(1))
+    const ids = tabs.map((tab) => tab.href.slice(1)).filter((id) => id !== 'home')
     const elements = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el))
 
     const observer = new IntersectionObserver(
       (entries) => {
+        if (window.scrollY < 80) {
+          setActive('#home')
+          return
+        }
+
         const visible = entries
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
@@ -36,8 +41,27 @@ const ProfileTabs = () => {
     )
 
     elements.forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
+
+    const onScroll = () => {
+      if (window.scrollY < 80) setActive('#home')
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('scroll', onScroll)
+    }
   }, [])
+
+  const handleTabClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href !== '#home') return
+
+    event.preventDefault()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    setActive('#home')
+    history.replaceState(null, '', '#home')
+  }
 
   return (
     <div className="sticky top-0 z-40 -mx-4 mb-6 border-b border-border bg-canvas px-4">
@@ -49,6 +73,7 @@ const ProfileTabs = () => {
               <a
                 key={tab.name}
                 href={tab.href}
+                onClick={(event) => handleTabClick(event, tab.href)}
                 className={`relative flex shrink-0 items-center gap-2 px-4 py-3 text-sm whitespace-nowrap ${
                   isActive ? 'font-semibold text-fg' : 'font-medium text-fg-muted hover:text-fg'
                 }`}

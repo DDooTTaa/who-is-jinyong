@@ -11,6 +11,7 @@ import Contact from '@/components/Contact'
 export default function Home() {
   return (
     <div className="min-h-screen bg-canvas">
+      <div id="home" className="h-px w-full scroll-mt-0" aria-hidden="true" />
       <div className="mx-auto max-w-[1280px] px-4 py-6 md:flex md:gap-6">
         <div className="mb-6 md:mb-0 md:w-[296px] md:shrink-0">
           <ProfileSidebar />

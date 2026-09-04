@@ -1,12 +1,12 @@
 'use client'
 
-import { useEffect, useState, type ComponentType } from 'react'
+import { useEffect, useState, type ElementType } from 'react'
 import { BarChart2, Book, ChevronLeft, Database, ExternalLink, FolderGit2, X } from 'lucide-react'
 import { SiDart, SiFirebase, SiFlutter, SiGoogletagmanager, SiNextdotjs, SiReact, SiTailwindcss, SiVercel, SiVite } from 'react-icons/si'
 
 type TechIcon = {
   tooltip: string
-  icon: ComponentType<{ size?: number; className?: string }>
+  icon: ElementType
   className: string
 }
 

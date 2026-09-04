@@ -306,13 +306,13 @@ const PersonalProjects = () => {
               ) : (
                 <div className="grid gap-4 md:grid-cols-2">
                   {projects.map((project) => {
-                    const isHoloCard = project.name === 'holo-card'
+                    const hasPulseBorder = project.name === 'holo-card' || project.name === 'bizblah'
                     const card = (
                       <button
                         type="button"
                         onClick={() => setSelected(project)}
                         className={`gh-card flex h-full w-full flex-col p-5 text-left hover:bg-canvas-subtle${
-                          isHoloCard ? ' holo-pulse-border-inner' : ''
+                          hasPulseBorder ? ' holo-pulse-border-inner' : ''
                         }`}
                       >
                         <div className="mb-2 flex items-center gap-2">
@@ -347,7 +347,7 @@ const PersonalProjects = () => {
                       </button>
                     )
 
-                    if (isHoloCard) {
+                    if (hasPulseBorder) {
                       return (
                         <div key={project.name} className="holo-pulse-border">
                           {card}

@@ -44,8 +44,9 @@ const About = () => {
           </p>
           <p className="mb-3 text-[16px] leading-7 text-fg">
             2021년부터 프론트엔드 개발자로 활동하며, 3개의 회사에서 다양한 프로젝트를 경험했습니다.
-            5000개 이상의 매장에서 사용하는 서비스를 개발하고, 서비스 배포, B2B 서비스 확대와
-            글로벌라이즈를 위한 i18n 도입 등 다양한 도전을 해왔습니다.
+            5000개 이상의 매장에서 사용하는 서비스를 개발하고, 채널톡·AWS(Scheduler·Lambda·Bedrock) 기반
+            자체 AI 솔루션과 백엔드 연동까지 맡으며, 서비스 배포, B2B 서비스 확대와 글로벌라이즈를 위한
+            i18n 도입 등 다양한 도전을 해왔습니다.
           </p>
           <p className="mb-0 text-[16px] leading-7 text-fg">
             <span className="gh-topic mr-1">AI First</span>
@@ -96,6 +97,7 @@ const About = () => {
             <div>
               <h4 className="mb-1 font-semibold text-fg">메뉴잇 (2024.04 ~ 재직중)</h4>
               <ul className="list-disc space-y-1 pl-5 text-fg-muted">
+                <li><strong className="text-fg">채널톡 자체 AI 솔루션</strong> — AWS EventBridge Scheduler·Lambda·Bedrock으로 단독 개발</li>
                 <li><strong className="text-fg">페이플 결제 연동</strong> — 심사 요청부터 백엔드·DB까지 전 과정 참여</li>
                 <li><strong className="text-fg">CS 인원 50% 감축</strong>에 따른 고객 문의 자동화 서비스 기획·디자인·개발</li>
                 <li><strong className="text-fg">컴포넌트 공통화</strong>로 30,000줄 이상의 코드 감축 및 유지보수 효율성 향상</li>

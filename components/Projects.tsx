@@ -8,10 +8,20 @@ const companyGroups = [
   {
     company: '메뉴잇',
     period: '2024.04 ~ 재직중',
-    description: '5000개 이상 매장에서 사용하는 다목적 관리 & 운영 서비스',
+    description: '5000개 이상 매장에서 사용하는 다목적 관리 & 운영 서비스. 채널톡·AWS·백엔드 기반 자체 AI 솔루션까지 단독 개발',
     language: 'TypeScript',
     languageColor: '#3178c6',
     projects: [
+      {
+        title: '채널톡 자체 AI 솔루션',
+        summary: '테이블 오더 메뉴잇 - 채널톡 기반 고객 응대를 위한 자체 AI 솔루션을 단독 개발. AWS EventBridge Scheduler, Lambda, Bedrock을 활용해 스케줄링·서버리스 처리·LLM 응답까지 end-to-end로 구현.',
+        technologies: ['Channel Talk', 'AWS EventBridge Scheduler', 'AWS Lambda', 'Amazon Bedrock', 'TypeScript'],
+        category: 'AI Solution',
+        role: '단독 개발 (기획 ~ 인프라·연동)',
+        challenges: '채널톡 문의 흐름에 맞춰 자동 응대하려면 웹훅·스케줄·LLM 호출을 한 파이프라인으로 묶어야 했고, 운영 중에도 안정적으로 돌아가도록 서버리스 구조로 설계해야 했습니다.',
+        solutions: 'EventBridge Scheduler로 주기/예약 작업을 잡고, Lambda에서 채널톡 연동과 비즈니스 로직을 처리하며, Bedrock으로 응답을 생성해 자체 AI 응대 솔루션을 단독으로 구축',
+        learnings: '프론트뿐 아니라 AWS 서버리스와 LLM을 직접 조합하면, 외부 SaaS 위에서도 회사에 맞는 AI 운영 도구를 빠르게 만들 수 있다는 확신을 얻었습니다.',
+      },
       {
         title: '페이플(Payple) 결제 연동',
         summary: '테이블 오더 메뉴잇 - 페이플 결제 연동을 위한 전 과정에 참여한 프로젝트. 심사 요청부터 프론트·백엔드·DB 설계·구현까지 담당.',

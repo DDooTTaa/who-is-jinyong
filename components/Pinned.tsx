@@ -323,7 +323,10 @@ const PersonalProjects = () => {
               ) : (
                 <div className="grid gap-4 md:grid-cols-2">
                   {projects.map((project) => {
-                    const hasPulseBorder = project.name === 'holo-card' || project.name === 'bizblah'
+                    const hasPulseBorder =
+                      project.name === 'holo-card' ||
+                      project.name === 'bizblah' ||
+                      project.name === 'rotape'
                     const card = (
                       <button
                         type="button"

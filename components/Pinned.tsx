@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type ElementType } from 'react'
 import { BarChart2, Book, ChevronLeft, Database, ExternalLink, FolderGit2, X } from 'lucide-react'
-import { SiDart, SiFirebase, SiFlutter, SiGoogletagmanager, SiNextdotjs, SiReact, SiTailwindcss, SiVercel, SiVite } from 'react-icons/si'
+import { SiDart, SiFirebase, SiFlutter, SiGoogletagmanager, SiNextdotjs, SiNodedotjs, SiReact, SiTailwindcss, SiTypescript, SiVercel, SiVite } from 'react-icons/si'
 
 type TechIcon = {
   tooltip: string
@@ -57,6 +57,23 @@ const projects: Project[] = [
     icons: [
       { tooltip: 'React', icon: SiReact, className: 'text-[#61dafb]' },
       { tooltip: 'Next.js', icon: SiNextdotjs, className: '' },
+      { tooltip: 'Vercel', icon: SiVercel, className: '' },
+    ],
+  },
+  {
+    name: 'ShippingSearch',
+    href: 'https://shipping-search.vercel.app/',
+    description: '운송장 번호만으로 국내 주요 택배사를 자동 감지해 배송 이력을 조회하는 API·UI.',
+    language: 'TypeScript',
+    languageColor: '#3178c6',
+    visibility: 'Private',
+    role: '기획 / API / UI 개발',
+    challenges: '택배사마다 조회 방식과 운송장 형식이 달라, 번호만으로 정확한 결과를 내기가 어려웠습니다. 12자리처럼 여러 택배사가 겹치는 경우도 있었습니다.',
+    solutions: '운송장 패턴으로 후보 택배사를 좁힌 뒤, 필요하면 병렬 조회해 실제 배송 이력이 있는 결과를 반환하도록 만들었습니다. CJ·우체국·한진·롯데·로젠·경동·합동을 지원합니다.',
+    learnings: '외부 사이트 연동은 단일 API보다, 형식 감지·실패 처리·결과 정규화가 서비스 품질을 가른다는 점을 배웠습니다.',
+    icons: [
+      { tooltip: 'TypeScript', icon: SiTypescript, className: 'text-[#3178c6]' },
+      { tooltip: 'Node.js', icon: SiNodedotjs, className: 'text-[#339933]' },
       { tooltip: 'Vercel', icon: SiVercel, className: '' },
     ],
   },

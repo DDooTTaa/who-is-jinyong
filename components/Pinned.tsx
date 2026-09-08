@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState, type ElementType } from 'react'
-import { BarChart2, Book, ChevronLeft, Database, ExternalLink, FolderGit2, X } from 'lucide-react'
+import { BarChart2, Book, Database, ExternalLink, FolderGit2, X } from 'lucide-react'
 import { SiDart, SiFirebase, SiFlutter, SiGoogletagmanager, SiNextdotjs, SiNodedotjs, SiReact, SiTailwindcss, SiTypescript, SiVercel, SiVite } from 'react-icons/si'
 
 type TechIcon = {
@@ -162,23 +162,12 @@ const projects: Project[] = [
 
 const PersonalProjects = () => {
   const [open, setOpen] = useState(false)
-  const [selected, setSelected] = useState<Project | null>(null)
-
-  const closeModal = () => {
-    setOpen(false)
-    setSelected(null)
-  }
 
   useEffect(() => {
     if (!open) return
 
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key !== 'Escape') return
-      if (selected) {
-        setSelected(null)
-        return
-      }
-      closeModal()
+      if (event.key === 'Escape') setOpen(false)
     }
 
     document.body.style.overflow = 'hidden'
@@ -188,7 +177,7 @@ const PersonalProjects = () => {
       document.body.style.overflow = ''
       window.removeEventListener('keydown', onKeyDown)
     }
-  }, [open, selected])
+  }, [open])
 
   return (
     <section id="pinned" className="mt-4">
@@ -214,7 +203,7 @@ const PersonalProjects = () => {
             type="button"
             aria-label="팝업 닫기"
             className="absolute inset-0 bg-black/50"
-            onClick={closeModal}
+            onClick={() => setOpen(false)}
           />
 
           <div
@@ -225,31 +214,17 @@ const PersonalProjects = () => {
           >
             <div className="flex items-center justify-between border-b border-border bg-canvas-subtle px-5 py-3">
               <div className="flex min-w-0 items-center gap-2">
-                {selected ? (
-                  <button
-                    type="button"
-                    onClick={() => setSelected(null)}
-                    className="gh-btn h-8 gap-1 px-2"
-                    aria-label="목록으로"
-                  >
-                    <ChevronLeft size={16} />
-                    목록
-                  </button>
-                ) : (
-                  <FolderGit2 size={18} className="text-fg-muted" />
-                )}
+                <FolderGit2 size={18} className="text-fg-muted" />
                 <h2 id="personal-projects-title" className="truncate text-base font-semibold">
-                  {selected ? selected.name : '개인 프로젝트'}
+                  개인 프로젝트
                 </h2>
-                {!selected && (
-                  <span className="rounded-full border border-border px-2 text-[12px] text-fg-muted">
-                    {projects.length}
-                  </span>
-                )}
+                <span className="rounded-full border border-border px-2 text-[12px] text-fg-muted">
+                  {projects.length}
+                </span>
               </div>
               <button
                 type="button"
-                onClick={closeModal}
+                onClick={() => setOpen(false)}
                 className="gh-btn h-8 w-8 p-0"
                 aria-label="닫기"
               >
@@ -258,127 +233,67 @@ const PersonalProjects = () => {
             </div>
 
             <div className="overflow-y-auto p-5">
-              {selected ? (
-                <div className="space-y-5">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <Book size={16} className="text-fg-muted" />
-                    <span className="text-lg font-semibold text-fg">{selected.name}</span>
-                    <span className="rounded-full border border-border px-2 text-[12px] text-fg-muted">
-                      {selected.visibility}
-                    </span>
-                    <span className="rounded-full border border-border px-2 text-[12px] text-fg-muted">
-                      {selected.role}
-                    </span>
-                    {selected.topic && <span className="gh-topic">{selected.topic}</span>}
-                  </div>
-
-                  <p className="text-sm leading-6 text-fg">{selected.description}</p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {selected.icons.map((item) => (
-                      <span
-                        key={item.tooltip}
-                        className="tech-icon-tooltip inline-flex cursor-help"
-                        data-tooltip={item.tooltip}
-                      >
-                        <item.icon size={18} className={item.className} />
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="space-y-4 rounded-gh border border-border bg-canvas-subtle p-4 text-sm leading-6">
-                    <div>
-                      <h3 className="mb-1 font-semibold text-danger">어려웠던 점</h3>
-                      <p className="text-fg-muted">{selected.challenges}</p>
-                    </div>
-                    <div>
-                      <h3 className="mb-1 font-semibold text-success">해결 방법</h3>
-                      <p className="text-fg-muted">{selected.solutions}</p>
-                    </div>
-                    <div>
-                      <h3 className="mb-1 font-semibold text-accent">배운 점</h3>
-                      <p className="text-fg-muted">{selected.learnings}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between gap-3 text-xs text-fg-muted">
-                    <span className="inline-flex items-center gap-1">
-                      <span
-                        className="h-3 w-3 rounded-full"
-                        style={{ background: selected.languageColor }}
-                      />
-                      {selected.language}
-                    </span>
+              <div className="grid gap-4 md:grid-cols-2">
+                {projects.map((project) => {
+                  const hasPulseBorder =
+                    project.name === 'holo-card' ||
+                    project.name === 'bizblah' ||
+                    project.name === 'rotape'
+                  const card = (
                     <a
-                      href={selected.href}
+                      href={project.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="gh-btn gh-btn-primary h-8 text-xs"
+                      className={`gh-card flex h-full w-full flex-col p-5 text-left hover:bg-canvas-subtle${
+                        hasPulseBorder ? ' holo-pulse-border-inner' : ''
+                      }`}
                     >
-                      <ExternalLink size={12} />
-                      사이트 보기
+                      <div className="mb-2 flex items-center gap-2">
+                        <Book size={16} className="text-fg-muted" />
+                        <span className="text-base font-semibold text-accent">{project.name}</span>
+                        <span className="rounded-full border border-border px-2 text-[12px] text-fg-muted">
+                          {project.visibility}
+                        </span>
+                      </div>
+                      <p className="mb-4 flex-1 text-sm leading-6 text-fg-muted">{project.description}</p>
+                      <div className="mb-4 flex flex-wrap gap-2">
+                        {project.icons.map((item) => (
+                          <span
+                            key={item.tooltip}
+                            className="tech-icon-tooltip inline-flex cursor-help"
+                            data-tooltip={item.tooltip}
+                          >
+                            <item.icon size={18} className={item.className} />
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex items-center justify-between gap-3 text-xs text-fg-muted">
+                        <span className="inline-flex items-center gap-1">
+                          <span
+                            className="h-3 w-3 rounded-full"
+                            style={{ background: project.languageColor }}
+                          />
+                          {project.language}
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-accent">
+                          <ExternalLink size={12} />
+                          사이트 보기
+                        </span>
+                      </div>
                     </a>
-                  </div>
-                </div>
-              ) : (
-                <div className="grid gap-4 md:grid-cols-2">
-                  {projects.map((project) => {
-                    const hasPulseBorder =
-                      project.name === 'holo-card' ||
-                      project.name === 'bizblah' ||
-                      project.name === 'rotape'
-                    const card = (
-                      <button
-                        type="button"
-                        onClick={() => setSelected(project)}
-                        className={`gh-card flex h-full w-full flex-col p-5 text-left hover:bg-canvas-subtle${
-                          hasPulseBorder ? ' holo-pulse-border-inner' : ''
-                        }`}
-                      >
-                        <div className="mb-2 flex items-center gap-2">
-                          <Book size={16} className="text-fg-muted" />
-                          <span className="text-base font-semibold text-accent">{project.name}</span>
-                          <span className="rounded-full border border-border px-2 text-[12px] text-fg-muted">
-                            {project.visibility}
-                          </span>
-                        </div>
-                        <p className="mb-4 flex-1 text-sm leading-6 text-fg-muted">{project.description}</p>
-                        <div className="mb-4 flex flex-wrap gap-2">
-                          {project.icons.map((item) => (
-                            <span
-                              key={item.tooltip}
-                              className="tech-icon-tooltip inline-flex cursor-help"
-                              data-tooltip={item.tooltip}
-                            >
-                              <item.icon size={18} className={item.className} />
-                            </span>
-                          ))}
-                        </div>
-                        <div className="flex items-center justify-between gap-3 text-xs text-fg-muted">
-                          <span className="inline-flex items-center gap-1">
-                            <span
-                              className="h-3 w-3 rounded-full"
-                              style={{ background: project.languageColor }}
-                            />
-                            {project.language}
-                          </span>
-                          <span className="text-accent">상세 보기</span>
-                        </div>
-                      </button>
+                  )
+
+                  if (hasPulseBorder) {
+                    return (
+                      <div key={project.name} className="holo-pulse-border">
+                        {card}
+                      </div>
                     )
+                  }
 
-                    if (hasPulseBorder) {
-                      return (
-                        <div key={project.name} className="holo-pulse-border">
-                          {card}
-                        </div>
-                      )
-                    }
-
-                    return <div key={project.name}>{card}</div>
-                  })}
-                </div>
-              )}
+                  return <div key={project.name}>{card}</div>
+                })}
+              </div>
             </div>
           </div>
         </div>

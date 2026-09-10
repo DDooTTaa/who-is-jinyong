@@ -27,7 +27,7 @@ type Project = {
 
 const projects: Project[] = [
   {
-    name: 'holo-card',
+    name: 'HOLO CARD',
     href: 'https://holo-card-nine.vercel.app',
     description: '포인터 움직임에 맞춰 틸트·글레어·홀로그램 질감이 동시에 반응하는 카드 UI 생성기입니다. 3D 모델링 없이 CSS만 사용하여 보더와 광택을 실시간으로 움직이도록 설계했습니다.',
     language: 'TypeScript',
@@ -160,7 +160,7 @@ const projects: Project[] = [
   },
 ]
 
-const featuredOrder = ['bizblah', 'rotape', 'holo-card', 'ShippingSearch']
+const featuredOrder = ['bizblah', 'rotape', 'HOLO CARD', 'ShippingSearch']
 const orderedProjects = [
   ...featuredOrder.flatMap((name) => projects.filter((project) => project.name === name)),
   ...projects.filter((project) => !featuredOrder.includes(project.name)),
@@ -242,7 +242,7 @@ const PersonalProjects = () => {
               <div className="grid gap-4 md:grid-cols-2">
                 {orderedProjects.map((project) => {
                   const hasPulseBorder =
-                    project.name === 'holo-card' ||
+                    project.name === 'HOLO CARD' ||
                     project.name === 'bizblah' ||
                     project.name === 'rotape'
                   const card = (

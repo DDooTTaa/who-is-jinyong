@@ -79,13 +79,30 @@ const skillCategories = [
   },
 ]
 
-const languageBar = [
-  { name: 'TypeScript', pct: 38, color: '#3178c6' },
-  { name: 'JavaScript', pct: 22, color: '#f1e05a' },
-  { name: 'React / Vue', pct: 20, color: '#61dafb' },
-  { name: 'Flutter / Dart', pct: 12, color: '#02569B' },
-  { name: 'Other', pct: 8, color: '#8b949e' },
-]
+const categoryBarColors: Record<string, string> = {
+  Frontend: '#61dafb',
+  'State & Style': '#764abc',
+  'AI / Cloud': '#ff9900',
+  'Tools & DevOps': '#f05032',
+}
+
+const skillCounts = skillCategories.map((category) => category.skills.length)
+const totalSkillCount = skillCounts.reduce((sum, count) => sum + count, 0)
+const flooredPercents = skillCounts.map((count) => Math.floor((count / totalSkillCount) * 100))
+const leftover = 100 - flooredPercents.reduce((sum, pct) => sum + pct, 0)
+const remainderOrder = skillCounts
+  .map((count, index) => ({ index, frac: (count / totalSkillCount) * 100 - flooredPercents[index] }))
+  .sort((a, b) => b.frac - a.frac)
+const categoryPercents = [...flooredPercents]
+for (let i = 0; i < leftover; i += 1) {
+  categoryPercents[remainderOrder[i].index] += 1
+}
+
+const languageBar = skillCategories.map((category, index) => ({
+  name: category.title,
+  pct: categoryPercents[index],
+  color: categoryBarColors[category.title],
+}))
 
 const Skills = () => {
   return (

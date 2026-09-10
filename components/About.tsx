@@ -18,7 +18,7 @@ const values = [
   {
     icon: Users,
     title: '협업의 자세',
-    description: '성장을 위해 겸손한 자세로 타 직군과 적극적으로 논의합니다.',
+    description: '겸손한 자세로 타 직군과 적극적으로 논의합니다.',
   },
 ]
 
@@ -100,7 +100,6 @@ const About = () => {
                 <li><strong className="text-fg">CS 인원 50% 감축</strong>에 따른 고객 문의 자동화 서비스 기획·디자인·개발</li>
                 <li><strong className="text-fg">컴포넌트 공통화</strong>로 30,000줄 이상의 코드 감축 및 유지보수 효율성 향상</li>
                 <li><strong className="text-fg">i18n 도입</strong>으로 서비스 전체 다국어 처리 (한국어, 영어) 구현</li>
-                <li>25개 이상의 Feature 개발과 500개 이상의 BugFix 수행</li>
                 <li><strong className="text-fg">AI</strong>를 활용하여 대표님의 아이디어를 신속하게 개발 및 검증</li>
               </ul>
             </div>

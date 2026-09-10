@@ -6,7 +6,7 @@ const activities = [
   {
     title: '글또 10기',
     period: '2024',
-    description: '개발자 글쓰기 커뮤니티 글또 10기 활동',
+    description: '기술 블로그 작성 및 지식 공유 · 3개 회사 · 경력 4년 이상',
     details: [
       '정기적으로 기술 블로그 포스팅 작성',
       '커뮤니티 멤버들과의 네트워킹',

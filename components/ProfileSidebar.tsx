@@ -10,7 +10,7 @@ const ProfileSidebar = () => {
         <div className="relative h-[88px] w-[88px] shrink-0 overflow-hidden rounded-full border border-border md:mb-4 md:h-[296px] md:w-full md:max-w-[296px]">
           <Image
             src="/profile.png"
-            alt="프론트엔드 · AI 개발자 공진용 프로필 사진"
+            alt="AI First Product Engineer 공진용 프로필 사진"
             fill
             className="object-cover scale-125"
             style={{ objectPosition: 'center center' }}
@@ -21,12 +21,12 @@ const ProfileSidebar = () => {
 
         <div className="min-w-0 pt-1 md:pt-0">
           <h1 className="text-[26px] font-semibold leading-tight text-fg">공진용</h1>
-          <p className="text-[20px] font-light leading-tight text-fg-muted">프론트엔드 · AI 개발자 · Product Engineer</p>
+          <p className="text-[20px] font-light leading-tight text-fg-muted">AI First Front Engineer · Product Engineer</p>
         </div>
       </div>
 
       <p className="mt-4 text-sm leading-relaxed text-fg">
-        AI를 활용해 빠르게 프로젝트를 만드는 개발자 공진용입니다.
+        AI를 사용한 기획·디자인·FE(웹/앱)·백엔드로 짧은 주기에 아이디어를 검증합니다.
       </p>
 
       <div className="mt-4 flex flex-col gap-2">

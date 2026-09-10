@@ -12,6 +12,7 @@ import {
   FaReact,
 } from 'react-icons/fa'
 import {
+  SiNextdotjs,
   SiFirebase,
   SiFlutter,
   SiGoogletagmanager,
@@ -19,6 +20,7 @@ import {
   SiNotion,
   SiRedux,
   SiSass,
+  SiSlack,
   SiStyledcomponents,
   SiTailwindcss,
   SiTypescript,
@@ -34,6 +36,7 @@ const skillCategories = [
       { name: 'React', level: 90, icon: FaReact, color: '#61dafb' },
       { name: 'Vue.js', level: 85, icon: SiVuedotjs, color: '#42b883' },
       { name: 'TypeScript', level: 85, icon: SiTypescript, color: '#3178c6' },
+      { name: 'Next.js', level: 85, icon: SiNextdotjs, color: 'currentColor' },
       { name: 'JavaScript', level: 90, icon: FaJs, color: '#f1e05a' },
       { name: 'Flutter', level: 70, icon: SiFlutter, color: '#02569B' },
     ],
@@ -51,17 +54,27 @@ const skillCategories = [
     ],
   },
   {
+    title: 'AI / Cloud',
+    icon: FaAws,
+    skills: [
+      { name: 'Amazon Bedrock', level: 80, icon: FaAws, color: '#ff9900' },
+      { name: 'AWS Lambda', level: 80, icon: FaAws, color: '#ff9900' },
+      { name: 'EventBridge Scheduler', level: 75, icon: FaAws, color: '#ff9900' },
+      { name: 'Firebase', level: 80, icon: SiFirebase, color: '#ffca28' },
+    ],
+  },
+  {
     title: 'Tools & DevOps',
     icon: FaBolt,
     skills: [
       { name: 'Git', level: 90, icon: FaGitAlt, color: '#f05032' },
       { name: 'GitHub Actions', level: 80, icon: FaGithub, color: 'currentColor' },
       { name: 'AWS CloudFront', level: 75, icon: FaAws, color: '#ff9900' },
-      { name: 'Firebase', level: 80, icon: SiFirebase, color: '#ffca28' },
       { name: 'Jira', level: 85, icon: SiJira, color: '#0052cc' },
       { name: 'Notion', level: 90, icon: SiNotion, color: 'currentColor' },
       { name: 'Amplitude', level: 80, icon: HiChartBar, color: '#1f883d' },
       { name: 'GTM', level: 75, icon: SiGoogletagmanager, color: '#246fdb' },
+      { name: 'Slack', level: 80, icon: SiSlack, color: '#4A154B' },
     ],
   },
 ]
@@ -108,7 +121,7 @@ const Skills = () => {
           ))}
         </ul>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {skillCategories.map((category) => {
             const SkillIcon = category.icon
             return (

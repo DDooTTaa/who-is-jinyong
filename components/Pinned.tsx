@@ -29,11 +29,11 @@ const projects: Project[] = [
   {
     name: 'holo-card',
     href: 'https://holo-card-nine.vercel.app',
-    description: '홀로그램 카드 인터랙션을 구현한 UI 컴포넌트 실험 프로젝트.',
+    description: '포인터 움직임에 맞춰 틸트·글레어·홀로그램 질감이 동시에 반응하는 카드 UI 생성기입니다. 3D 모델링 없이 CSS만 사용하여 보더와 광택을 실시간으로 움직이도록 설계했습니다.',
     language: 'TypeScript',
     languageColor: '#3178c6',
     visibility: 'Public',
-    role: '기획 / 디자인 / 프론트엔드 개발',
+    role: '기획 / 디자인 / FE',
     challenges: '포인터 움직임에 맞춰 틸트·글레어·홀로그램 질감이 동시에 반응해야 해서, CSS만으로 자연스러운 깊이감을 만들기 어려웠습니다.',
     solutions: '포인터 좌표를 CSS 변수로 넘겨 보더와 광택을 실시간으로 움직이게 하고, 펄스 글로우로 카드가 살아 있는 느낌을 더했습니다.',
     learnings: '미세한 모션은 프레임 단위보다 빛·질감·속도의 균형이 더 중요하다는 점을 배웠습니다.',
@@ -63,11 +63,11 @@ const projects: Project[] = [
   {
     name: 'ShippingSearch',
     href: 'https://shipping-search.vercel.app/',
-    description: '운송장 번호만으로 국내 주요 택배사를 자동 감지해 배송 이력을 조회하는 API·UI.',
+    description: '운송장 번호만 입력하면 국내 주요 택배사를 자동 감지해 배송 이력을 조회하는 웹 서비스입니다. 택배사마다 조회 방식과 번호 형식이 달라 패턴으로 후보를 좁힌 뒤 병렬 조회하도록 만들었고, CJ·우체국·한진·롯데·로젠·경동·합동을 지원하는 기능을 만들어 배포했습니다.',
     language: 'TypeScript',
     languageColor: '#3178c6',
     visibility: 'Private',
-    role: '기획 / API / UI 개발',
+    role: '기획 / 디자인 / FE',
     challenges: '택배사마다 조회 방식과 운송장 형식이 달라, 번호만으로 정확한 결과를 내기가 어려웠습니다. 12자리처럼 여러 택배사가 겹치는 경우도 있었습니다.',
     solutions: '운송장 패턴으로 후보 택배사를 좁힌 뒤, 필요하면 병렬 조회해 실제 배송 이력이 있는 결과를 반환하도록 만들었습니다. CJ·우체국·한진·롯데·로젠·경동·합동을 지원합니다.',
     learnings: '외부 사이트 연동은 단일 API보다, 형식 감지·실패 처리·결과 정규화가 서비스 품질을 가른다는 점을 배웠습니다.',
@@ -80,12 +80,12 @@ const projects: Project[] = [
   {
     name: 'rotape',
     href: 'https://rotape.site/',
-    description: 'Rotape - 한 컷의 테이프처럼 영원할 당신의 인연.',
+    description: '로테이션 소개팅 웹 서비스. 자기 소개와 매칭 플로우, 인증·저장·공유, 유저 관리를 위한 어드민 페이지까지 한 서비스로 만들었습니다. Next.js, TypeScript, Tailwind로 프론트를 구현하고 Firebase Auth·Firestore·Storage를 연동해 Vercel에 배포했습니다.',
     language: 'TypeScript',
     languageColor: '#3178c6',
     topic: 'AI First',
     visibility: 'Public',
-    role: '기획 / 디자인 / 프론트엔드 개발',
+    role: '기획 / 디자인 / FE / BE',
     challenges: '인연을 남기는 서비스라 감성적인 UX와 실제 저장·공유 흐름을 동시에 맞춰야 했습니다.',
     solutions: 'AI를 활용해 기획부터 구현까지 빠르게 반복하고, Firebase로 인증·데이터·스토리지를 연결해 서비스를 배포했습니다.',
     learnings: '감성 서비스도 데이터 구조와 공유 플로우가 명확해야 경험이 살아난다는 점을 배웠습니다.',
@@ -104,7 +104,7 @@ const projects: Project[] = [
   {
     name: 'bizblah',
     href: 'https://bizblah.com/',
-    description: '프랜차이즈 점주 익명 커뮤니티. AI를 활용해 3일 안에 FE·BE·디자인·기획·데이터 수집 구현.',
+    description: '프랜차이즈 점주 익명 커뮤니티. 익명성을 중시하며 기획·디자인·프론트·백엔드를 한 흐름으로 설계했습니다. AI를 활용해 3일 안에 Next.js, TypeScript, Tailwind, Firebase(Auth/Firestore)로 핵심 기능을 구현하고 Vercel에 배포했습니다.',
     language: 'TypeScript',
     languageColor: '#3178c6',
     topic: 'AI First',
@@ -158,6 +158,12 @@ const projects: Project[] = [
       { tooltip: 'Vercel', icon: SiVercel, className: '' },
     ],
   },
+]
+
+const featuredOrder = ['bizblah', 'rotape', 'holo-card', 'ShippingSearch']
+const orderedProjects = [
+  ...featuredOrder.flatMap((name) => projects.filter((project) => project.name === name)),
+  ...projects.filter((project) => !featuredOrder.includes(project.name)),
 ]
 
 const PersonalProjects = () => {
@@ -219,7 +225,7 @@ const PersonalProjects = () => {
                   개인 프로젝트
                 </h2>
                 <span className="rounded-full border border-border px-2 text-[12px] text-fg-muted">
-                  {projects.length}
+                  {orderedProjects.length}
                 </span>
               </div>
               <button
@@ -234,7 +240,7 @@ const PersonalProjects = () => {
 
             <div className="overflow-y-auto p-5">
               <div className="grid gap-4 md:grid-cols-2">
-                {projects.map((project) => {
+                {orderedProjects.map((project) => {
                   const hasPulseBorder =
                     project.name === 'holo-card' ||
                     project.name === 'bizblah' ||
@@ -248,12 +254,13 @@ const PersonalProjects = () => {
                         hasPulseBorder ? ' holo-pulse-border-inner' : ''
                       }`}
                     >
-                      <div className="mb-2 flex items-center gap-2">
+                      <div className="mb-2 flex flex-wrap items-center gap-2">
                         <Book size={16} className="text-fg-muted" />
                         <span className="text-base font-semibold text-accent">{project.name}</span>
                         <span className="rounded-full border border-border px-2 text-[12px] text-fg-muted">
                           {project.visibility}
                         </span>
+                        <span className="text-[12px] text-fg-muted">{project.role}</span>
                       </div>
                       <p className="mb-4 flex-1 text-sm leading-6 text-fg-muted">{project.description}</p>
                       <div className="mb-4 flex flex-wrap gap-2">

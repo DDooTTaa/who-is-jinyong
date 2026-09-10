@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState, type MouseEvent } from 'react'
-import { BookOpen, Briefcase, LayoutDashboard, Mail, Moon, Package, Sun, Users } from 'lucide-react'
+import { BookMarked, BookOpen, Briefcase, GraduationCap, LayoutDashboard, Mail, Moon, Package, Sun, Users } from 'lucide-react'
 import { useTheme } from '@/components/ThemeProvider'
 
 const tabs = [
@@ -9,6 +9,8 @@ const tabs = [
   { name: 'README', href: '#about', icon: BookOpen },
   { name: 'Skills', href: '#skills', icon: Package },
   { name: 'Repositories', href: '#projects', icon: Briefcase },
+  { name: 'Patent', href: '#patent', icon: BookMarked },
+  { name: 'Education', href: '#education', icon: GraduationCap },
   { name: 'Community', href: '#community', icon: Users },
   { name: 'Contact', href: '#contact', icon: Mail },
 ]

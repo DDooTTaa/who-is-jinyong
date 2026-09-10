@@ -106,7 +106,7 @@ const Contact = () => {
     <section id="contact" className="mb-6">
       <div className="mb-3 flex items-center justify-between">
         <h2 className="text-base font-normal text-fg">
-          Issues <span className="text-fg-muted">· contact</span>
+          Contact <span className="text-fg-muted">· 연락하기</span>
         </h2>
       </div>
 
@@ -119,6 +119,9 @@ const Contact = () => {
                 <a
                   key={info.title}
                   href={info.link}
+                  {...(info.link.startsWith('http')
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
                   className="flex items-center gap-3 rounded-gh px-2 py-2 hover:bg-canvas-subtle"
                 >
                   <info.icon size={16} className="text-fg-muted" />

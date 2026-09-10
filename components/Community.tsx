@@ -20,7 +20,7 @@ const Community = () => {
     <section id="community" className="mb-6">
       <div className="mb-3 flex items-center justify-between">
         <h2 className="text-base font-normal text-fg">
-          Discussions <span className="text-fg-muted">· community</span>
+          Community <span className="text-fg-muted">· 커뮤니티 활동</span>
         </h2>
       </div>
 

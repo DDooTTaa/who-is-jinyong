@@ -12,20 +12,22 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-canvas">
       <div id="home" className="h-px w-full scroll-mt-0" aria-hidden="true" />
-      <div className="mx-auto max-w-[1280px] px-4 py-6 md:flex md:gap-6">
-        <div className="mb-6 md:mb-0 md:w-[296px] md:shrink-0">
-          <ProfileSidebar />
-        </div>
+      <main>
+        <div className="mx-auto max-w-[1280px] px-4 py-6 md:flex md:gap-6">
+          <div className="mb-6 md:mb-0 md:w-[296px] md:shrink-0">
+            <ProfileSidebar />
+          </div>
 
-        <div className="min-w-0 flex-1">
-          <ProfileTabs />
-          <About />
-          <Skills />
-          <Projects />
-          <Community />
-          <Contact />
+          <div className="min-w-0 flex-1">
+            <ProfileTabs />
+            <About />
+            <Skills />
+            <Projects />
+            <Community />
+            <Contact />
+          </div>
         </div>
-      </div>
+      </main>
 
       <footer className="mt-8 border-t border-border">
         <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-3 px-4 py-8 text-xs text-fg-muted sm:flex-row">

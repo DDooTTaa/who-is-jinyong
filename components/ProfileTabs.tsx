@@ -66,13 +66,14 @@ const ProfileTabs = () => {
   return (
     <div className="sticky top-0 z-40 -mx-4 mb-6 border-b border-border bg-canvas px-4">
       <div className="flex items-center gap-2">
-        <nav className="flex min-w-0 flex-1 gap-0 overflow-x-auto">
+        <nav aria-label="페이지 섹션" className="flex min-w-0 flex-1 gap-0 overflow-x-auto">
           {tabs.map((tab) => {
             const isActive = active === tab.href
             return (
               <a
                 key={tab.name}
                 href={tab.href}
+                aria-current={isActive ? 'page' : undefined}
                 onClick={(event) => handleTabClick(event, tab.href)}
                 className={`relative flex shrink-0 items-center gap-2 px-4 py-3 text-sm whitespace-nowrap ${
                   isActive ? 'font-semibold text-fg' : 'font-medium text-fg-muted hover:text-fg'

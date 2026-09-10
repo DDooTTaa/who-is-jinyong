@@ -214,7 +214,7 @@ const Projects = () => {
     <section id="projects" className="mb-6">
       <div className="mb-3 flex items-center justify-between">
         <h2 className="text-base font-normal text-fg">
-          Organizations <span className="text-fg-muted">· careers</span>
+          Careers <span className="text-fg-muted">· 경력과 프로젝트</span>
         </h2>
       </div>
 

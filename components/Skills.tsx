@@ -79,7 +79,7 @@ const Skills = () => {
     <section id="skills" className="mb-6">
       <div className="mb-3 flex items-center justify-between">
         <h2 className="text-base font-normal text-fg">
-          Skills <span className="text-fg-muted">· languages & tools</span>
+          Skills <span className="text-fg-muted">· 언어와 도구</span>
         </h2>
       </div>
 

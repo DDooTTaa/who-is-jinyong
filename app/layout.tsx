@@ -2,17 +2,107 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import { site } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: '공진용 포트폴리오',
-  description: 'AI 시대에 좋은 문장이 될 개발자,공진용',
-  keywords: ['포트폴리오', '개발자', '공진용', 'Next.js', 'React'],
-  authors: [{ name: '공진용' }],
-  openGraph: {
-    title: '공진용 포트폴리오',
-    description: 'AI 시대에 좋은 문장이 될 개발자,공진용',
-    type: 'website',
+  metadataBase: new URL(site.url),
+  title: {
+    default: site.title,
+    template: `%s | ${site.author}`,
   },
+  description: site.description,
+  keywords: [...site.keywords],
+  authors: [{ name: site.author, url: site.url }],
+  creator: site.author,
+  publisher: site.author,
+  category: 'portfolio',
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: site.locale,
+    url: site.url,
+    siteName: site.name,
+    title: site.title,
+    description: site.description,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: site.title,
+    description: site.description,
+  },
+  icons: {
+    icon: [{ url: '/icon', type: 'image/png' }],
+    apple: [{ url: '/apple-icon', type: 'image/png' }],
+  },
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0d1117' },
+  ],
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${site.url}/#person`,
+      name: site.author,
+      alternateName: ['Gong Jinyong', 'Jinyong Gong'],
+      jobTitle: site.jobTitle,
+      description: site.description,
+      url: site.url,
+      image: `${site.url}/profile.png`,
+      email: `mailto:${site.email}`,
+      telephone: site.phone,
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'KR',
+      },
+      worksFor: {
+        '@type': 'Organization',
+        name: site.company,
+      },
+      sameAs: [site.github, site.blog],
+      knowsAbout: ['React', 'TypeScript', 'Next.js', 'Vue.js', 'Flutter', 'Frontend', 'AI'],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${site.url}/#website`,
+      url: site.url,
+      name: site.name,
+      description: site.description,
+      inLanguage: 'ko-KR',
+      publisher: { '@id': `${site.url}/#person` },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${site.url}/#webpage`,
+      url: site.url,
+      name: site.title,
+      description: site.description,
+      isPartOf: { '@id': `${site.url}/#website` },
+      about: { '@id': `${site.url}/#person` },
+      inLanguage: 'ko-KR',
+    },
+  ],
 }
 
 const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}catch(e){}})();`
@@ -28,9 +118,21 @@ export default function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+        />
       </head>
       <body className="bg-canvas text-fg min-h-screen antialiased">
+        <a href="#about" className="skip-link">
+          본문으로 건너뛰기
+        </a>
         {gtmId && (
           <>
             <Script
@@ -78,9 +180,7 @@ export default function RootLayout({
           </>
         )}
 
-        <ThemeProvider>
-          <main>{children}</main>
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   )

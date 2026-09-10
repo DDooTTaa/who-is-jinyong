@@ -9,8 +9,8 @@ const ProfileSidebar = () => {
       <div className="flex items-start gap-4 md:block">
         <div className="relative h-[88px] w-[88px] shrink-0 overflow-hidden rounded-full border border-border md:mb-4 md:h-[296px] md:w-full md:max-w-[296px]">
           <Image
-            src="/공진용.png"
-            alt="공진용"
+            src="/profile.png"
+            alt="프론트엔드 · AI 개발자 공진용 프로필 사진"
             fill
             className="object-cover scale-125"
             style={{ objectPosition: 'center center' }}
@@ -21,7 +21,7 @@ const ProfileSidebar = () => {
 
         <div className="min-w-0 pt-1 md:pt-0">
           <h1 className="text-[26px] font-semibold leading-tight text-fg">공진용</h1>
-          <p className="text-[20px] font-light leading-tight text-fg-muted">Product Engineer</p>
+          <p className="text-[20px] font-light leading-tight text-fg-muted">프론트엔드 · AI 개발자 · Product Engineer</p>
         </div>
       </div>
 

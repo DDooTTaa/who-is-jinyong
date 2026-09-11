@@ -4,7 +4,26 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import { Book, Building2, ChevronDown, ChevronRight, ExternalLink, Lock } from 'lucide-react'
 
-const companyGroups = [
+type CareerProject = {
+  title: string
+  summary: string
+  technologies: string[]
+  category: string
+  role?: string
+  challenges?: string
+  solutions?: string
+  learnings?: string
+  live?: string
+}
+
+const companyGroups: {
+  company: string
+  period: string
+  description: string
+  language: string
+  languageColor: string
+  projects: CareerProject[]
+}[] = [
   {
     company: '메뉴잇',
     period: '2024.04 ~ 재직중',

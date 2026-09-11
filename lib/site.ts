@@ -2,7 +2,7 @@ export const site = {
   name: '공진용 포트폴리오',
   title: '공진용 | AI First Product Engineer 포트폴리오',
   description:
-    '2021년부터 FE 개발자로 일했고, 26년 초부터는 AI를 사용한 기획, 디자인, FE(웹/앱), 백엔드 역할을 수행합니다. 5,000개 이상 매장 서비스와 AWS 기반 LLM을 소개합니다.',
+    '2021년부터 FE 개발자로 일했고, 기획·디자인·백엔드까지 직접 만드는 것에 자신이 있으며 피드백과 검증을 통한 빠른 개발을 지향합니다. 5,000개 이상 매장 서비스와 AWS 기반 LLM을 소개합니다.',
   url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://who-is-jinyong-q865.vercel.app').replace(/\/$/, ''),
   locale: 'ko_KR',
   author: '공진용',

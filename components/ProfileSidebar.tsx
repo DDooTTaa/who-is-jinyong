@@ -26,7 +26,7 @@ const ProfileSidebar = () => {
       </div>
 
       <p className="mt-4 text-sm leading-relaxed text-fg">
-        AI를 사용한 기획·디자인·FE(웹/앱)·백엔드로 짧은 주기에 아이디어를 검증합니다.
+        기획·디자인·백엔드까지 직접 만드는 것에 자신이 있으며, 피드백과 검증을 통한 빠른 개발을 지향합니다.
       </p>
 
       <div className="mt-4 flex flex-col gap-2">

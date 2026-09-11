@@ -9,7 +9,7 @@ const tabs = [
   { name: 'README', href: '#about', icon: BookOpen },
   { name: 'Skills', href: '#skills', icon: Package },
   { name: 'Repositories', href: '#projects', icon: Briefcase },
-  { name: 'Patent', href: '#patent', icon: BookMarked },
+  { name: 'Papers', href: '#patent', icon: BookMarked },
   { name: 'Education', href: '#education', icon: GraduationCap },
   { name: 'Community', href: '#community', icon: Users },
   { name: 'Contact', href: '#contact', icon: Mail },

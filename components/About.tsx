@@ -38,17 +38,16 @@ const About = () => {
             About Me
           </h2>
           <p className="mb-3 text-[16px] leading-7 text-fg">
-            2021년부터 FE 개발자로 일했고, 26년 초부터는 AI를 사용한 기획, 디자인, FE(웹/앱), 백엔드
-            역할을 수행하며 개발을 진행하고 있습니다.
+            2021년부터 FE 개발자로 일했고, 기획·디자인·백엔드까지 직접 만드는 것에 자신이 있으며
+            피드백과 검증을 통한 빠른 개발을 지향합니다.
           </p>
           <p className="mb-3 text-[16px] leading-7 text-fg">
-            5,000개 이상 매장에서 쓰는 서비스를 운영하고, 사용자가 가게의 매출 데이터를 차트나 표로 볼 수
-            있는 AWS 기반 LLM 서비스를 개발했습니다. 보안이나 SEO, 데이터 수집 같은 디테일을 중요하게
-            생각합니다.
+            5,000개 이상 매장에서 쓰는 서비스를 운영하고, 사용자가 가게의 매출 데이터를 자연어를 이용해
+            차트나 표로 조회할 수 있는 AWS 기반 LLM 서비스를 구현했습니다. 보안이나 SEO, 데이터 수집 같은 운영적 요구사항을
+            중요하게 생각합니다.
           </p>
           <p className="mb-0 text-[16px] leading-7 text-fg">
-            짧은 주기로 아이디어를 검증하고 개발합니다. 항상 배우는 자세로 두려워하지 않고 탐구하며, 겸손한
-            자세로 팀원들과 소통합니다.
+            항상 배우는 자세로 두려워하지 않고 탐구하며, 겸손한 자세로 팀원들과 소통합니다.
           </p>
         </div>
       </article>
@@ -95,11 +94,12 @@ const About = () => {
               <h4 className="mb-1 font-semibold text-fg">메뉴잇 (2024.04 ~ 재직중)</h4>
               <ul className="list-disc space-y-1 pl-5 text-fg-muted">
                 <li><strong className="text-fg">채널톡 자체 AI 솔루션</strong> — AWS EventBridge Scheduler·Lambda·Bedrock으로 단독 개발</li>
-                <li><strong className="text-fg">AWS 기반 LLM 서비스</strong> — 가게 매출 데이터를 차트·표로 조회할 수 있게 개발</li>
+                <li><strong className="text-fg">AWS 기반 LLM 서비스</strong> — 가게 매출 데이터를 자연어를 이용해 차트·표로 조회할 수 있게 구현</li>
                 <li><strong className="text-fg">페이플 결제 연동</strong> — 심사 요청부터 백엔드·DB까지 전 과정 참여</li>
+                <li><strong className="text-fg">B2B 프랜차이즈 매장 메뉴 일괄 배포</strong> 기능</li>
                 <li><strong className="text-fg">CS 인원 50% 감축</strong>에 따른 고객 문의 자동화 서비스 기획·디자인·개발</li>
                 <li><strong className="text-fg">컴포넌트 공통화</strong>로 30,000줄 이상의 코드 감축 및 유지보수 효율성 향상</li>
-                <li><strong className="text-fg">i18n 도입</strong>으로 서비스 전체 다국어 처리 (한국어, 영어) 구현</li>
+                <li><strong className="text-fg">i18n 아키텍처 설계 및 적용</strong>을 통해 다국어 지원 체계 구축</li>
                 <li><strong className="text-fg">AI</strong>를 활용하여 대표님의 아이디어를 신속하게 개발 및 검증</li>
               </ul>
             </div>

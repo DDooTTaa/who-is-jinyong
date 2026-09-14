@@ -17,7 +17,6 @@ type Project = {
   language: string
   languageColor: string
   visibility: 'Public' | 'Private'
-  topic?: string
   role: string
   challenges: string
   solutions: string
@@ -50,7 +49,7 @@ const projects: Project[] = [
     language: 'TypeScript',
     languageColor: '#3178c6',
     visibility: 'Private',
-    role: '기획 / 프론트엔드 개발',
+    role: '기획 / 디자인 / FE / BE',
     challenges: '결제 데이터를 운영자가 빠르게 확인하고 처리할 수 있어야 해서, 인증·권한과 상태 흐름을 처음부터 맞춰야 했습니다.',
     solutions: '로그인 기반 접근 구조를 만들고, 결제 데이터를 조회·관리하는 화면과 운영 플로우를 서비스 형태로 구현했습니다.',
     learnings: '결제 운영 도구는 화면보다 권한, 상태, 실수 방지 UX가 먼저라는 점을 체감했습니다.',
@@ -83,7 +82,6 @@ const projects: Project[] = [
     description: '로테이션 소개팅 웹 서비스. 자기 소개와 매칭 플로우, 인증·저장·공유, 유저 관리를 위한 어드민 페이지까지 한 서비스로 만들었습니다. Next.js, TypeScript, Tailwind로 프론트를 구현하고 Firebase Auth·Firestore·Storage를 연동해 Vercel에 배포했습니다.',
     language: 'TypeScript',
     languageColor: '#3178c6',
-    topic: 'AI First',
     visibility: 'Public',
     role: '기획 / 디자인 / FE / BE',
     challenges: '인연을 남기는 서비스라 감성적인 UX와 실제 저장·공유 흐름을 동시에 맞춰야 했습니다.',
@@ -107,7 +105,6 @@ const projects: Project[] = [
     description: '프랜차이즈 점주 익명 커뮤니티. 익명성을 중시하며 기획·디자인·프론트·백엔드를 한 흐름으로 설계했습니다. AI를 활용해 3일 안에 Next.js, TypeScript, Tailwind, Firebase(Auth/Firestore)로 핵심 기능을 구현하고 Vercel에 배포했습니다.',
     language: 'TypeScript',
     languageColor: '#3178c6',
-    topic: 'AI First',
     visibility: 'Public',
     role: '기획 / 디자인 / FE / BE',
     challenges: '익명성과 신뢰가 동시에 필요한 커뮤니티라, 짧은 일정 안에 기획·디자인·개발을 모두 맞춰야 했습니다.',

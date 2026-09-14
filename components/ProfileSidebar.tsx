@@ -10,7 +10,7 @@ const ProfileSidebar = () => {
         <div className="relative h-[88px] w-[88px] shrink-0 overflow-hidden rounded-full border border-border md:mb-4 md:h-[296px] md:w-full md:max-w-[296px]">
           <Image
             src="/profile.png"
-            alt="AI First Product Engineer 공진용 프로필 사진"
+            alt="공진용 프로필 사진"
             fill
             className="object-cover scale-125"
             style={{ objectPosition: 'center center' }}
@@ -21,7 +21,7 @@ const ProfileSidebar = () => {
 
         <div className="min-w-0 pt-1 md:pt-0">
           <h1 className="text-[26px] font-semibold leading-tight text-fg">공진용</h1>
-          <p className="text-[20px] font-light leading-tight text-fg-muted">AI First Front Engineer · Product Engineer</p>
+          <p className="text-[20px] font-light leading-tight text-fg-muted">Front Engineer · Product Engineer</p>
         </div>
       </div>
 
@@ -89,7 +89,6 @@ const ProfileSidebar = () => {
       <div className="mt-4 border-t border-border pt-4">
         <h2 className="mb-2 text-sm font-semibold">Achievements</h2>
         <div className="flex flex-wrap gap-2">
-          <span className="gh-topic">AI First</span>
           <span className="gh-topic">FrontEnd</span>
           <span className="gh-topic">TypeScript</span>
           <span className="inline-flex items-center gap-1 gh-topic">

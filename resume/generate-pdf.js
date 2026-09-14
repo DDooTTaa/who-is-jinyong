@@ -9,8 +9,8 @@ const chrome = path.join(process.env.LOCALAPPDATA, 'Google', 'Chrome', 'Applicat
 const profile = path.join(process.env.TEMP, 'chrome-resume-profile')
 
 const variants = [
-  { role: 'AI First Product Engineer', file: '공진용_이력서_Product_Engineer.pdf' },
-  { role: 'AI First Front Engineer', file: '공진용_이력서_Front_Engineer.pdf' },
+  { role: 'Product Engineer', file: '공진용_이력서_Product_Engineer.pdf' },
+  { role: 'Front Engineer', file: '공진용_이력서_Front_Engineer.pdf' },
 ]
 
 fs.mkdirSync(profile, { recursive: true })

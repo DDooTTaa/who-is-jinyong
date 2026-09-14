@@ -96,7 +96,7 @@ const About = () => {
                 <li><strong className="text-fg">채널톡 자체 AI 솔루션</strong> — AWS EventBridge Scheduler·Lambda·Bedrock으로 단독 개발</li>
                 <li><strong className="text-fg">AWS 기반 LLM 서비스</strong> — 가게 매출 데이터를 자연어를 이용해 차트·표로 조회할 수 있게 구현</li>
                 <li><strong className="text-fg">페이플 결제 연동</strong> — 심사 요청부터 백엔드·DB까지 전 과정 참여</li>
-                <li><strong className="text-fg">B2B 프랜차이즈 매장 메뉴 일괄 배포</strong> 기능</li>
+                <li><strong className="text-fg">B2B 프랜차이즈 매장 메뉴 일괄 배포</strong> — 본사에서 가맹점 메뉴를 한 번에 배포할 수 있게 기획부터 디자인·개발까지 구현</li>
                 <li><strong className="text-fg">CS 인원 50% 감축</strong>에 따른 고객 문의 자동화 서비스 기획·디자인·개발</li>
                 <li><strong className="text-fg">컴포넌트 공통화</strong>로 30,000줄 이상의 코드 감축 및 유지보수 효율성 향상</li>
                 <li><strong className="text-fg">i18n 아키텍처 설계 및 적용</strong>을 통해 다국어 지원 체계 구축</li>

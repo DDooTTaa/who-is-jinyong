@@ -33,9 +33,6 @@ const ProfileSidebar = () => {
         <a href="/#contact" className="gh-btn gh-btn-primary w-full">
           Contact
         </a>
-        <a href="/thinking" className="gh-btn w-full">
-        생각
-        </a>
         <a
           href="https://github.com/DDooTTaa"
           target="_blank"

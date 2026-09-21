@@ -130,7 +130,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-canvas text-fg min-h-screen antialiased">
-        <a href="#about" className="skip-link">
+        <a href="#content" className="skip-link">
           본문으로 건너뛰기
         </a>
         {gtmId && (

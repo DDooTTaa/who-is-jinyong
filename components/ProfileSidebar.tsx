@@ -30,8 +30,11 @@ const ProfileSidebar = () => {
       </p>
 
       <div className="mt-4 flex flex-col gap-2">
-        <a href="#contact" className="gh-btn gh-btn-primary w-full">
+        <a href="/#contact" className="gh-btn gh-btn-primary w-full">
           Contact
+        </a>
+        <a href="/thinking" className="gh-btn w-full">
+          일하는 방식
         </a>
         <a
           href="https://github.com/DDooTTaa"

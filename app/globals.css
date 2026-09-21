@@ -105,7 +105,13 @@ body {
 #patent,
 #education,
 #community,
-#contact {
+#contact,
+#thinking,
+#q1,
+#q3,
+#q4,
+#q5,
+#q6 {
   scroll-margin-top: 56px;
 }
 
